@@ -35,7 +35,12 @@ App.MapController = (function (options) {
             .bindPopup("<h4>" + data.stadion + "</h4><p>" + data.addressStreet + "<br>" + data.addressTown + "</p>");
     }
 
+    function zoomTo(data) {
+        map.setView(new L.LatLng(data.lat, data.long), 15);
+    }
+
     that.init = init;
     that.addStadiumToMap = addStadiumToMap;
+    that.zoomTo = zoomTo;
     return that;
 });

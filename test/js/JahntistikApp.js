@@ -21,7 +21,13 @@ App.JahntistikApp = (function () {
         })).init();
 
         listView.update();
+        listView.handleClick();
+        listView.addEventListener("listItemClicked", onListItemClicked);
         addMarkersToMap();
+    }
+
+    function onListItemClicked(event) {
+        map.zoomTo(event.data);
     }
 
     function addMarkersToMap() {

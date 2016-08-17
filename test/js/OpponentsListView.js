@@ -1,6 +1,6 @@
 var App = App || {};
 App.OpponentsListView = (function (options) {
-    var that = {},
+    var that = new EventPublisher(),
         list,
         data,
         template,
@@ -10,10 +10,17 @@ App.OpponentsListView = (function (options) {
         list = options.list;
         data = options.data;
         template = options.template;
-
         bindingFunction = _.template(template);
-
         return that;
+    }
+
+    function handleClick() {
+        var data = {};
+        $("ul.teamsList li").click(function () {
+            data.lat = $(this).attr("lat"),
+            data.long = $(this).attr("long");
+            that.notifyAll("listItemClicked", data);
+        });
     }
 
     function update() {
@@ -43,5 +50,6 @@ App.OpponentsListView = (function (options) {
 
     that.init = init;
     that.update = update;
+    that.handleClick = handleClick;
     return that;
 });

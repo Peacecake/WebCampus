@@ -57,7 +57,7 @@
 
 
         <script type="text/template" id="listEntry">
-            <li class="teamsListEntry">
+            <li class="teamsListEntry" lat="<%= lat %>" long="<%= long %>">
                 <div class="teamLogoContainer">
                     <div class="teamLogo"></div>
                 </div>
@@ -125,6 +125,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script type="text/javascript" src="js/EventPublisher.js"></script>
         <!--<script type="text/javascript" src="js/ligaDB.js"></script>-->
         <script type="text/javascript" src="js/JahntistikApp.js"></script>
         <script type="text/javascript" src="js/OpponentsListView.js"></script>
