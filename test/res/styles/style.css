@@ -13,6 +13,7 @@ header {
     width: 100%;
     background-color: #E2001A;
     color: white;
+    z-index: 10;
 }
 
 header a {
