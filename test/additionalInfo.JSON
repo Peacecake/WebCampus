@@ -1,0 +1,46 @@
+[
+        {
+            "matchID": ,
+            "lat": 50.917328,
+            "long": 6.943432,
+            "stadion": "Südstadion",
+            "addressStreet": "Am Vorgebirgstor 35",
+            "addressTown": "50969 Köln",
+            "maxFans": "14.944 Plätze",
+            "website": "https://www.fortuna-koeln.de/",
+            "logoPath": "/res/img/teamLogos/koeln.svg"
+        },
+        {
+            "matchID": ,
+            "lat": 51.408923,
+            "long": 6.778704,
+            "stadion": "Schauinsland-Reisen-Arena",
+            "addressStreet": "Margaretenstraße 5-7",
+            "addressTown": "47055 Duisburg",
+            "maxFans": "31.500 Plätze",
+            "website": "https://www.msv-duisburg.de/",
+            "logoPath": "/res/img/teamLogos/duisburg.svg"
+        },
+        {
+            "matchID": ,
+            "lat": 52.280717,
+            "long": 8.071351,
+            "stadion": "Osnatel-Arena",
+            "addressStreet": "Scharnhorststraße 50",
+            "addressTown": "49084 Osnabrück",
+            "maxFans": "16.667 Plätze",
+            "website": "http://www.vfl.de/startseite.html",
+            "logoPath": "/res/img/teamLogos/osnabrueck.svg"
+        },
+        {
+            "matchID": ,
+            "lat": 48.840497,
+            "long": 10.072698,
+            "stadion": "Scholz Arena",
+            "addressStreet": "Stadionweg 5",
+            "addressTown": "73430 Aalen",
+            "maxFans": "14.500 Plätze",
+            "website": "http://www.vfr-aalen.de/",
+            "logoPath": "/res/img/teamLogos/aalen.svg"
+        }
+    ]

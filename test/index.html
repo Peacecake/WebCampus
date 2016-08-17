@@ -28,7 +28,7 @@
             <div class="teamInfoContainer">
                 <ul class="teamsList">
 
-                    <li MatchID="40086" class="teamsListEntry">
+                    <!--<li MatchID="40086" class="teamsListEntry">
                         <div class="teamLogoContainer">
                             <div class="teamLogo"></div>
                         </div>
@@ -45,7 +45,7 @@
                                 <p>Ergebnis in laufender Saison</p>
                             </div>
                         </div>
-                    </li>
+                    </li>-->
 
                 </ul>
             </div>
@@ -55,10 +55,82 @@
             <a href="#">Impressum</a>
         </footer>
 
+
+        <script type="text/template" id="listEntry">
+            <li class="teamsListEntry">
+                <div class="teamLogoContainer">
+                    <div class="teamLogo"></div>
+                </div>
+                <div class="teamDetailsContainer">
+                    <h4>Team</h4>
+                    <p><%= stadion %>, <%= maxFans %></p>
+                    <a href="<%= website %>" target="_blank">zur Homepage</a>
+                </div>
+                <div class="scoreContainer">
+                    <div class="scoreBox score">
+                        <p>0 : 0</p>
+                    </div>
+                    <div class="scoreBox lastScoreText">
+                        <p>Ergebnis in laufender Saison</p>
+                    </div>
+                </div>
+            </li>
+        </script>
+        <script type="text/template" id="additionalDataJSON">
+            [
+                    {
+                        "lat": 50.917328,
+                        "long": 6.943432,
+                        "stadion": "Südstadion",
+                        "addressStreet": "Am Vorgebirgstor 35",
+                        "addressTown": "50969 Köln",
+                        "maxFans": "14.944 Plätze",
+                        "website": "https://www.fortuna-koeln.de/",
+                        "logoPath": "res/img/teamLogos/koeln.svg"
+                    },
+                    {
+                        "lat": 51.408923,
+                        "long": 6.778704,
+                        "stadion": "Schauinsland-Reisen-Arena",
+                        "addressStreet": "Margaretenstraße 5-7",
+                        "addressTown": "47055 Duisburg",
+                        "maxFans": "31.500 Plätze",
+                        "website": "https://www.msv-duisburg.de/",
+                        "logoPath": "res/img/teamLogos/duisburg.svg"
+                    },
+                    {
+                        "lat": 52.280717,
+                        "long": 8.071351,
+                        "stadion": "Osnatel-Arena",
+                        "addressStreet": "Scharnhorststraße 50",
+                        "addressTown": "49084 Osnabrück",
+                        "maxFans": "16.667 Plätze",
+                        "website": "http://www.vfl.de/startseite.html",
+                        "logoPath": "res/img/teamLogos/osnabrueck.svg"
+                    },
+                    {
+                        "lat": 48.840497,
+                        "long": 10.072698,
+                        "stadion": "Scholz Arena",
+                        "addressStreet": "Stadionweg 5",
+                        "addressTown": "73430 Aalen",
+                        "maxFans": "14.500 Plätze",
+                        "website": "http://www.vfr-aalen.de/",
+                        "logoPath": "res/img/teamLogos/aalen.svg"
+                    }
+                ]
+
+        </script>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
-        <script type="text/javascript" src="js/ligaDB.js"></script>
-        <script type="text/javascript" src="js/map.js"></script>
-        <script type="text/javascript" src="js/MapScroll.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <!--<script type="text/javascript" src="js/ligaDB.js"></script>-->
+        <script type="text/javascript" src="js/JahntistikApp.js"></script>
+        <script type="text/javascript" src="js/OpponentsListView.js"></script>
+        <script type="text/javascript" src="js/MapController.js"></script>
+        <script>
+            App.JahntistikApp.init();
+        </script>
     </body>
 </html>

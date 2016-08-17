@@ -1,7 +1,8 @@
 $(document).ready(function() {
     var regMatchData = {}, opponentsTeamData = {};
     $.getJSON("http://www.openligadb.de/api/getmatchdata/bl3/2016", onMatchDataRetrieved);
-
+    var data = JSON.parse(document.querySelector("#additionalDataJSON").innerHTML);
+    console.log(data);
     function onMatchDataRetrieved(allMatchData){
         regMatchData = getRegMatchData(allMatchData);
         opponentsTeamData = getOpponentsTeamData(regMatchData);

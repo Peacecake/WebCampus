@@ -30,7 +30,7 @@ header a:hover {
 header .teamLogo {
     height: 100%;
     width: 50px;
-    background-image: url("../img/ssvJahnRegensburg.svg");
+    background-image: url("../img/teamLogos/ssvJahnRegensburg.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -104,7 +104,7 @@ content .teamInfoContainer {
 }
 
 .teamsList li .teamLogoContainer .teamLogo {
-    background-image: url("../img/ssvJahnRegensburg.svg");
+    background-image: url("../img/teamLogos/ssvJahnRegensburg.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
