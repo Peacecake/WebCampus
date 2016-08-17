@@ -29,7 +29,7 @@ html {
 .Spielerrow{
   padding: 0;
   margin: 0;
-  
+
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -37,16 +37,16 @@ html {
   display: flex;
 
   justify-content: center;
-  
+
   -webkit-flex-flow: row wrap;
-  
+
 }
 
 .Spieler, .imgDescription {
   background: tomato;
   width: 149px;
   height: 210px;
-  
+
   margin: 20px;
   }
 
@@ -55,9 +55,9 @@ html {
   font-weight: bold;
   font-size: 1em;
   text-align: center;
-  vertical-align: middle; 
+  vertical-align: middle;
   padding-top: 10px;
-  
+
 }
 
 .Kaderh1{
@@ -69,7 +69,7 @@ html {
 img{
   position: absolute;
   display: block;
-  
+
 }
 
 .imgDescription {
@@ -83,17 +83,17 @@ img{
 
   visibility: hidden;
   opacity: 0;
-  
 
-  transition: visibility opacity 0.2s ease-in-out;
-  
+
+  transition: opacity 0.4s ease-in-out;
+
 }
 
 
 .Spieler:hover .imgDescription {
   visibility: visible;
   opacity: 1;
- 
+
 }
 
 @media all and (max-width: 580px) {
