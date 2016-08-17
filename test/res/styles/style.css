@@ -1,0 +1,152 @@
+body{
+    margin: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    height: 10vH;
+    width: 100%;
+    background-color: #E2001A;
+    color: white;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+    transition: border-bottom 200ms ease-in-out;
+}
+
+header a:hover {
+    /*color: red;*/
+    border-bottom: 5px solid #ecf0f1;
+}
+
+header .teamLogo {
+    height: 100%;
+    width: 50px;
+    background-image: url("../img/ssvJahnRegensburg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 20px;
+}
+
+content {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    z-index: -1;
+    top: 12%;
+    width: 100%;
+    padding-top: 10px;
+}
+
+content .mapContainer {
+    width: 48%;
+    height: 500px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+content .teamInfoContainer {
+    padding: 5px;
+    width: 48%;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.teamsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0;
+}
+
+.teamsList li{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    transition: border-color 300ms ease-in-out;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.teamsList li:hover {
+    border-color: #E2001A;
+}
+
+.teamsList li .teamLogoContainer {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.teamsList li .teamLogoContainer .teamLogo {
+    background-image: url("../img/ssvJahnRegensburg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+}
+
+.teamsList li .teamDetailsContainer {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /*align-items: cente;*/
+}
+
+.teamList li .scoreContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div .scoreBox p {
+    margin: 0;
+    text-align: center;
+}
+
+.score {
+    font-size: 1.5em;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(189, 195, 199,1);
+}
+
+footer a{
+    float: right;
+    margin-right: 5px;
+}
