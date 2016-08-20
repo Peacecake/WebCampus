@@ -2,23 +2,48 @@ var App = App || {};
 App.MapController = (function (options) {
     var that = {},
         mapContainer,
-        map;
+        map,
+        resetViewButton;
 
     function init() {
         mapContainer = options.mapContainer;
-        loadMap();
+        initializeMap();
+        setViewToOrigin();
+        addResetViewButton();
         enableAutoScroll();
         return that;
     }
 
-    function loadMap() {
-        map = L.map(options.overviewMap).setView([51.021090, 10.553437], 6);
+    function initializeMap() {
+        map = L.map(options.overviewMap);
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="http://mapbox.com">Mapbox</a>',
             maxZoom: 18,
             id: 'peacecake.0felhajf',
             accessToken: 'pk.eyJ1IjoicGVhY2VjYWtlIiwiYSI6ImNpcHF2ajdvYzAwNzBpOW5ibWJ2MGJnbXMifQ.KojxmZe0C7bRnyQ5nwxIPw'
         }).addTo(map);
+    }
+
+    function setViewToOrigin() {
+        map.setView([51.021090, 10.553437], 6);
+    }
+
+    function addResetViewButton() {
+        //source: http://www.coffeegnome.net/control-button-leaflet/
+        resetViewButton = L.Control.extend({
+            options:{
+                position: "topleft"
+            },
+            onAdd: function(map) {
+                var resetButtonContainer = L.DomUtil.create("div", "resetViewButton leaflet-bar leaflet-control leaflet-control-custom");
+
+                resetButtonContainer.onclick = function(){
+                    setViewToOrigin();
+                }
+                return resetButtonContainer;
+            }
+        });
+        map.addControl(new resetViewButton());
     }
 
     function enableAutoScroll() {
@@ -36,7 +61,7 @@ App.MapController = (function (options) {
     }
 
     function zoomTo(data) {
-        map.setView(new L.LatLng(data.lat, data.long), 15);
+        map.setView([data.lat, data.long], 15);
     }
 
     that.init = init;

@@ -8,11 +8,6 @@ $(document).ready(function() {
         opponentsTeamData = getOpponentsTeamData(regMatchData);
         //console.log(regMatchData);
         console.log(opponentsTeamData);
-        var listEntry = document.querySelector(".teamsListEntry");
-        var info = getMatchById(listEntry.getAttribute("MatchID"));
-        var teamLogo = document.querySelector(".teamsListEntry .teamLogo");
-        teamLogo.style.backgroundImage = "url(" + info.opponent.TeamIconUrl +")";
-        console.log(info);
     }
 
     function getMatchById(id) {

@@ -28,6 +28,10 @@ header a:hover {
     border-bottom: 5px solid #ecf0f1;
 }
 
+.currentPage {
+    border-bottom: 5px solid #ecf0f1;
+}
+
 header .teamLogo {
     height: 100%;
     width: 50px;
@@ -50,7 +54,8 @@ content {
 
 content .mapContainer {
     width: 48%;
-    height: 500px;
+    /*height: 700px;*/
+    height: 87vH;
     border: 2px solid black;
     border-radius: 5px;
     box-sizing: border-box;
@@ -89,7 +94,54 @@ content .teamInfoContainer {
     transition: border-color 300ms ease-in-out;
     padding: 5px;
     cursor: pointer;
+    box-shadow: 1px 1px 3px black;
 }
+
+.teamsList li .buttonContainer {
+    position: relative;
+    bottom: 0;
+    width: 10%;
+    height: 100%;
+}
+
+.expandButton {
+    bottom: 0;
+    height: 30px;
+    width: 30px;
+    background-image: url("../img/expand-button.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 300ms ease-in-out;
+}
+
+.clickedExpandButton {
+    transform:rotate(180deg);
+    /*background-image: url("../img/expand-arrow.svg");*/
+}
+
+.resetViewButton {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    background-image: url("../img/zoom-out.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.resetViewButton:hover {
+    background-color: #f2f2f2;
+}
+
+/*.teamsListEntry {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+.teamsListEntry .fadeIn{
+    opacity: 1;
+}*/
 
 .teamsList li:hover {
     border-color: #E2001A;

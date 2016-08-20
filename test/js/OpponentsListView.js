@@ -16,10 +16,12 @@ App.OpponentsListView = (function (options) {
 
     function handleClick() {
         var data = {};
-        $("ul.teamsList li").click(function () {
-            data.lat = $(this).attr("lat"),
-            data.long = $(this).attr("long");
-            that.notifyAll("listItemClicked", data);
+        $("ul.teamsList li").click(function (e) {
+            if(!$(e.target).is("a")) {
+                data.lat = $(this).attr("lat"),
+                data.long = $(this).attr("long");
+                that.notifyAll("listItemClicked", data);
+            }
         });
     }
 
@@ -35,7 +37,7 @@ App.OpponentsListView = (function (options) {
     }
 
     function fillList() {
-        var i, tmpElement, listEntry, teamLogo;
+        var i, tmpElement, listEntry, teamLogo, expandButton, fadeTime = 100;
         for(i = 0; i < data.length; i++) {
             listEntry = bindingFunction(data[i]);
             tmpElement = document.createElement("div");
@@ -44,8 +46,18 @@ App.OpponentsListView = (function (options) {
             teamLogo = tmpElement.querySelector(".teamLogo");
             teamLogo.style.backgroundImage = "url(" + data[i].logoPath + ")";
 
-            list.appendChild(tmpElement.children[0]);
+            expandButton = tmpElement.querySelector(".expandButton");
+            expandButton.addEventListener("click", onExpandClick);
+
+            $(tmpElement.children[0]).hide().appendTo(list).fadeIn(fadeTime);
+            fadeTime = fadeTime + 500;
         }
+    }
+
+    function onExpandClick(event) {
+        var thisButton = event.target;
+        thisButton.classList.toggle("clickedExpandButton");
+        console.log(event.target);
     }
 
     that.init = init;
