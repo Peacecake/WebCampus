@@ -1,14 +1,17 @@
 var App = App || {};
 App.JahntistikApp = (function () {
     var that = {},
-        ligaDB,
+        db,
         map,
         listView,
         additionalData;
 
     function init() {
         additionalData = JSON.parse(document.querySelector("#additionalDataJSON").innerHTML);
-        //ligaDB = new App.LigaDBController();
+
+        db = (new App.LigaDBController()).init();
+        db.addEventListener("matchDataAvailable", onMatchDataAvailable);
+
         listView = (new App.OpponentsListView({
             data: additionalData,
             list: document.querySelector(".teamsList"),
@@ -24,6 +27,13 @@ App.JahntistikApp = (function () {
         listView.handleClick();
         listView.addEventListener("listItemClicked", onListItemClicked);
         addMarkersToMap();
+    }
+
+    function onMatchDataAvailable(e) {
+        var i, matchData = e.data;
+        for(i = 0; i < matchData.length; i++) {
+            listView.writeResultScore(matchData[i]);
+        }
     }
 
     function onListItemClicked(event) {

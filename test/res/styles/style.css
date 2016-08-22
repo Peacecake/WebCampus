@@ -1,5 +1,10 @@
 body{
     margin: 0;
+    background-image: url("../img/stuehle.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 header {
@@ -72,13 +77,14 @@ content .teamInfoContainer {
     border: 2px solid black;
     border-radius: 5px;
     box-sizing: border-box;
+    background: #E2001A;
+
 }
 
 .teamsList {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding: 0;
 }
 
@@ -88,6 +94,7 @@ content .teamInfoContainer {
     justify-content: center;
     align-items: center;
     width: 95%;
+    background: #ecf0f1;
     border: 1px solid black;
     border-radius: 3px;
     margin-bottom: 10px;
@@ -95,6 +102,10 @@ content .teamInfoContainer {
     padding: 5px;
     cursor: pointer;
     box-shadow: 1px 1px 3px black;
+}
+
+.teamsList li a {
+    color: #E2001A;
 }
 
 .teamsList li .buttonContainer {
@@ -121,8 +132,8 @@ content .teamInfoContainer {
 }
 
 .resetViewButton {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     background-color: white;
     background-image: url("../img/zoom-out.svg");
     background-position: center;
@@ -135,16 +146,9 @@ content .teamInfoContainer {
     background-color: #f2f2f2;
 }
 
-/*.teamsListEntry {
-    opacity: 0;
-    transition: opacity 300ms ease-in-out;
-}
-.teamsListEntry .fadeIn{
-    opacity: 1;
-}*/
-
 .teamsList li:hover {
-    border-color: #E2001A;
+    background: #e1e7e9;
+    border-color: white;
 }
 
 .teamsList li .teamLogoContainer {

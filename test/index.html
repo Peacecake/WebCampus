@@ -57,7 +57,7 @@
 
 
         <script type="text/template" id="listEntry">
-            <li class="teamsListEntry" lat="<%= lat %>" long="<%= long %>">
+            <li class="teamsListEntry" lat="<%= lat %>" long="<%= long %>" teamID="<%= teamID %>">
                 <div class="teamLogoContainer">
                     <div class="teamLogo"></div>
                 </div>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="scoreContainer">
                     <div class="scoreBox score">
-                        <p>0 : 0</p>
+                        <p>- : -</p>
                     </div>
                     <div class="scoreBox lastScoreText">
                         <p>Ergebnis in laufender Saison</p>
@@ -190,7 +190,7 @@
                         "logoPath": "res/img/teamLogos/halle.svg"
                     },
                     {
-                        "teamId": 102,
+                        "teamID": 102,
                         "name": "FC Hansa Rostock",
                         "lat": 54.084975,
                         "long": 12.095217,
@@ -317,7 +317,7 @@
         <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
         <script type="text/javascript" src="js/EventPublisher.js"></script>
-        <script type="text/javascript" src="js/ligaDB.js"></script>
+        <script type="text/javascript" src="js/LigaDBController.js"></script>
         <script type="text/javascript" src="js/JahntistikApp.js"></script>
         <script type="text/javascript" src="js/OpponentsListView.js"></script>
         <script type="text/javascript" src="js/MapController.js"></script>

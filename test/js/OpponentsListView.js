@@ -17,7 +17,7 @@ App.OpponentsListView = (function (options) {
     function handleClick() {
         var data = {};
         $("ul.teamsList li").click(function (e) {
-            if(!$(e.target).is("a")) {
+            if(!$(e.target).is("a") && !$(e.target).is(".expandButton")) {
                 data.lat = $(this).attr("lat"),
                 data.long = $(this).attr("long");
                 that.notifyAll("listItemClicked", data);
@@ -28,6 +28,19 @@ App.OpponentsListView = (function (options) {
     function update() {
         clearList();
         fillList();
+    }
+
+    function writeResultScore(data) {
+        var i, entryID, listEntries = list.getElementsByTagName("li");
+        for(i = 0; i < listEntries.length; i++) {
+            entryID = parseInt(listEntries[i].getAttribute("teamid"));
+            if(entryID === data.TeamId) {
+                var score = listEntries[i].querySelector(".score p");
+                if(data.finished) {
+                    score.innerHTML = "" + data.scoreOne + " : " + data.scoreTwo + "";
+                }
+            }
+        }
     }
 
     function clearList() {
@@ -57,11 +70,11 @@ App.OpponentsListView = (function (options) {
     function onExpandClick(event) {
         var thisButton = event.target;
         thisButton.classList.toggle("clickedExpandButton");
-        console.log(event.target);
     }
 
     that.init = init;
     that.update = update;
     that.handleClick = handleClick;
+    that.writeResultScore = writeResultScore;
     return that;
 });
