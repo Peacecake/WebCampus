@@ -60,16 +60,19 @@ App.OpponentsListView = (function (options) {
             teamLogo.style.backgroundImage = "url(" + data[i].logoPath + ")";
 
             expandButton = tmpElement.querySelector(".expandButton");
-            expandButton.addEventListener("click", onExpandClick);
+            $(expandButton).click(function(e){
+                $(this).toggleClass("clickedExpandButton");
+                var teamStats = $(this).parent().parent().next().get(0);
+                //teamStats.style.display = "block";
+                teamStats.classList.toggle("hidden");
+                setTimeout(function(){
+                    teamStats.classList.toggle("shown");
+                }, 200);
+            });
 
             $(tmpElement.children[0]).hide().appendTo(list).fadeIn(fadeTime);
             fadeTime = fadeTime + 500;
         }
-    }
-
-    function onExpandClick(event) {
-        var thisButton = event.target;
-        thisButton.classList.toggle("clickedExpandButton");
     }
 
     that.init = init;

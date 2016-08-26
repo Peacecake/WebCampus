@@ -57,26 +57,29 @@
 
 
         <script type="text/template" id="listEntry">
-            <li class="teamsListEntry" lat="<%= lat %>" long="<%= long %>" teamID="<%= teamID %>">
-                <div class="teamLogoContainer">
-                    <div class="teamLogo"></div>
-                </div>
-                <div class="teamDetailsContainer">
-                    <h4><%= name %></h4>
-                    <p><%= stadion %>, <%= maxFans %></p>
-                    <a href="<%= website %>" target="_blank">zur Homepage</a>
-                </div>
-                <div class="scoreContainer">
-                    <div class="scoreBox score">
-                        <p>- : -</p>
+            <li class="teamInfo" lat="<%= lat %>" long="<%= long %>" teamID="<%= teamID %>">
+                <div class="teamsListEntry">
+                    <div class="teamLogoContainer">
+                        <div class="teamLogo"></div>
                     </div>
-                    <div class="scoreBox lastScoreText">
-                        <p>Ergebnis in laufender Saison</p>
+                    <div class="teamDetailsContainer">
+                        <h4><%= name %></h4>
+                        <p><%= stadion %>, <%= maxFans %></p>
+                        <a href="<%= website %>" target="_blank">zur Homepage</a>
+                    </div>
+                    <div class="scoreContainer">
+                        <div class="scoreBox score">
+                            <p>- : -</p>
+                        </div>
+                        <div class="scoreBox lastScoreText">
+                            <p>Ergebnis in laufender Saison</p>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <div class="expandButton"></div>
                     </div>
                 </div>
-                <div class="buttonContainer">
-                    <div class="expandButton"></div>
-                </div>
+                <div class="teamStats hidden">platz für Statistiken</div>
             </li>
         </script>
         <script type="text/template" id="additionalDataJSON">

@@ -88,11 +88,8 @@ content .teamInfoContainer {
     padding: 0;
 }
 
-.teamsList li{
+.teamsList .teamInfo{
     list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 95%;
     background: #ecf0f1;
     border: 1px solid black;
@@ -102,6 +99,12 @@ content .teamInfoContainer {
     padding: 5px;
     cursor: pointer;
     box-shadow: 1px 1px 3px black;
+}
+
+.teamsList .teamsListEntry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .teamsList li a {
@@ -129,6 +132,23 @@ content .teamInfoContainer {
 .clickedExpandButton {
     transform:rotate(180deg);
     /*background-image: url("../img/expand-arrow.svg");*/
+}
+
+.teamStats {
+    margin-top: 10px;
+    width: 100%;
+    opacity: 0;
+    border-top: 2px solid black;
+    transition: opacity 300ms ease-in-out;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    opacity: 1;
 }
 
 .resetViewButton {
