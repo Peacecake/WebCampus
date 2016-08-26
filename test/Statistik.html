@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Web Campus</title>
+        <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+        <link rel="stylesheet" href="res/styles/style.css">
+        <link rel="stylesheet" href="res/styles/statistik_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="teamLogo"></div>
+            <h1>Jahntistik</h1>
+
+            <nav>
+                <a href="#">Überblick</a>
+                <a href="#">Statstik</a>
+                <a href="#">Kader</a>
+                <a href="#">Stadion</a>
+            </nav>
+        </header>
+        
+        <canvas id="myChart"></canvas>
+
+
+
+        <script type="text/template" id="data">
+          [
+          {"test1516":
+          [3,3,3,3,3,3,3,1,3,3,0,3,1,1,1,3,0,0,0,3,0,3,3,1,1,0,3,1,3,3,0,3,3,0]},
+          {"1415":
+          [3,0,0,0,1,3,1,0,0,0,0,0,0,3,0,1,0,0,0,0,0,0,3,1,3,0,0,0,3,0,3,1,0,1,0,0,1,3]},
+          {"1314":
+          [1,1,0,0,3,3,0,3,0,0,1,1,0,3,1,3,0,3,0,1,3,1,3,3,0,1,0,0,0,3,1,0,3,3,1,1,1,1]},
+          {"1213":
+          [0,3,0,0,0,0,3,3,0,0,0,0,0,1,0,1,1,1,0,0,3,0,1,0,0,1,0,0,1,0,0,0,0,0]},
+          {"1112":
+          [1,3,3,3,3,1,1,3,0,1,1,3,0,1,0,3,3,1,3,3,1,0,0,1,3,1,1,3,0,0,0,3,1,0,3,3,3,1]}
+          ]
+
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js">
+        </script>
+        <script type="text/javascript" src="js/statistik.js"></script>
+  </body>
+</html>
