@@ -50,7 +50,7 @@ App.OpponentsListView = (function (options) {
     }
 
     function fillList() {
-        var i, tmpElement, listEntry, teamLogo, expandButton, fadeTime = 100;
+        var i, tmpElement, listEntry, teamLogo, expandButton, teamsStats, fadeTime = 100;
         for(i = 0; i < data.length; i++) {
             listEntry = bindingFunction(data[i]);
             tmpElement = document.createElement("div");
@@ -62,8 +62,8 @@ App.OpponentsListView = (function (options) {
             expandButton = tmpElement.querySelector(".expandButton");
             $(expandButton).click(function(e){
                 $(this).toggleClass("clickedExpandButton");
-                var teamStats = $(this).parent().parent().next().get(0);
-                //teamStats.style.display = "block";
+                teamStats = $(this).parent().parent().next().get(0);
+
                 teamStats.classList.toggle("hidden");
                 setTimeout(function(){
                     teamStats.classList.toggle("shown");
