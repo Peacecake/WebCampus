@@ -28,6 +28,7 @@ App.OpponentsListView = (function (options) {
     function update() {
         clearList();
         fillList();
+        fadeIn();
     }
 
     function writeResultScore(data) {
@@ -50,7 +51,7 @@ App.OpponentsListView = (function (options) {
     }
 
     function fillList() {
-        var i, tmpElement, listEntry, teamLogo, expandButton, teamsStats, fadeTime = 100;
+        var i, tmpElement, listEntry, teamLogo, expandButton, teamsStats;
         for(i = 0; i < data.length; i++) {
             listEntry = bindingFunction(data[i]);
             tmpElement = document.createElement("div");
@@ -70,9 +71,18 @@ App.OpponentsListView = (function (options) {
                 }, 200);
             });
 
-            $(tmpElement.children[0]).hide().appendTo(list).fadeIn(fadeTime);
-            fadeTime = fadeTime + 500;
+            list.appendChild(tmpElement.children[0]);
         }
+    }
+
+    function fadeIn() {
+        $(".teamInfo").each(function(i) {
+            setTimeout(function () {
+                console.log(i);
+                $(".teamInfo").eq(i).addClass("isVisible");
+            }, 300 * i);
+
+        });
     }
 
     that.init = init;
