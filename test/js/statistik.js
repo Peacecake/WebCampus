@@ -12,7 +12,7 @@ var data = {
             label: "Punkte:",
             fill: false,
             lineTension: 0.1,
-            backgroundColor: "rgba(75,192,192,0.4)",
+            backgroundColor: "#ffffff",
             borderColor: "rgba(75,192,192,1)",
             borderCapStyle: 'butt',
             borderJoinStyle: 'miter',
@@ -29,10 +29,55 @@ var data = {
         }
     ]
 };
-var ctx = document.getElementById("myChart");
+var ctx = document.getElementById("LineChart");
 
 var myLineChart = new Chart(ctx, {
     type: 'line',
     data: data
 
+});
+
+//Pie_Chart
+
+var numWin = 0;
+var numDraw =0;
+var numLost =0;
+
+for (var i=0; i<totaldata[0].test1516.length;i++){
+  if(totaldata[0].test1516[i]==3){
+    numWin++;
+  }
+  if(totaldata[0].test1516[i]==1){
+    numDraw++;
+  }
+  if(totaldata[0].test1516[i]==0){
+    numLost++;
+  }
+}
+console.log(numWin);
+var piedata = {
+    labels: [
+        "Sieg",
+        "Unentschieden",
+        "Niederlage"
+    ],
+    datasets: [
+        {
+            data: [numWin,numDraw,numLost],
+            backgroundColor: [
+                "#FFCE56",
+                "#36A2EB",
+                "#FF6384"
+            ],
+            hoverBackgroundColor: [
+              "#FFCE56",
+              "#36A2EB",
+              "#FF6384"
+            ]
+        }]
+};
+var piectx = document.getElementById("Pie1516");
+var myPieChart = new Chart(piectx,{
+    type: 'pie',
+    data: piedata
 });
