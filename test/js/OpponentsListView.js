@@ -28,6 +28,7 @@ App.OpponentsListView = (function (options) {
     function update() {
         clearList();
         fillList();
+        fadeIn();
     }
 
     function writeResultScore(data) {
@@ -50,7 +51,7 @@ App.OpponentsListView = (function (options) {
     }
 
     function fillList() {
-        var i, tmpElement, listEntry, teamLogo, expandButton, fadeTime = 100;
+        var i, tmpElement, listEntry, teamLogo, expandButton, teamsStats;
         for(i = 0; i < data.length; i++) {
             listEntry = bindingFunction(data[i]);
             tmpElement = document.createElement("div");
@@ -60,16 +61,28 @@ App.OpponentsListView = (function (options) {
             teamLogo.style.backgroundImage = "url(" + data[i].logoPath + ")";
 
             expandButton = tmpElement.querySelector(".expandButton");
-            expandButton.addEventListener("click", onExpandClick);
+            $(expandButton).click(function(e){
+                $(this).toggleClass("clickedExpandButton");
+                teamStats = $(this).parent().parent().next().get(0);
 
-            $(tmpElement.children[0]).hide().appendTo(list).fadeIn(fadeTime);
-            fadeTime = fadeTime + 500;
+                teamStats.classList.toggle("hidden");
+                setTimeout(function(){
+                    teamStats.classList.toggle("shown");
+                }, 200);
+            });
+
+            list.appendChild(tmpElement.children[0]);
         }
     }
 
-    function onExpandClick(event) {
-        var thisButton = event.target;
-        thisButton.classList.toggle("clickedExpandButton");
+    function fadeIn() {
+        $(".teamInfo").each(function(i) {
+            setTimeout(function () {
+                console.log(i);
+                $(".teamInfo").eq(i).addClass("isVisible");
+            }, 300 * i);
+
+        });
     }
 
     that.init = init;

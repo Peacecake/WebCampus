@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Web Campus - Überblick</title>
+        <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+        <link rel="stylesheet" href="res/styles/mainStyle.css" >
+        <link rel="stylesheet" href="res/styles/overviewStyle.css">
+    </head>
+    <body>
+        <header>
+
+            <div class="teamLogo"></div>
+            <h1>Jahntistik</h1>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="overview.html" class="currentPage">Überblick</a>
+                <a href="statistik.html">Statstik</a>
+                <a href="kader.html">Kader</a>
+                <a href="#">Stadion</a>
+            </nav>
+        </header>
+
+
+
+        <content class="overviewContent">
+            <div class="mapContainer">
+                <div id="map"></div>
+            </div>
+            <div class="teamInfoContainer">
+                <ul class="teamsList">
+
+                    <!--<li MatchID="40086" class="teamsListEntry">
+                        <div class="teamLogoContainer">
+                            <div class="teamLogo"></div>
+                        </div>
+                        <div class="teamDetailsContainer">
+                            <h4>Team</h4>
+                            <p>Stadion, Zuschauerzahl</p>
+                            <a href="#">Link zur Website</a>
+                        </div>
+                        <div class="scoreContainer">
+                            <div class="scoreBox score">
+                                <p>0 : 0</p>
+                            </div>
+                            <div class="scoreBox lastScoreText">
+                                <p>Ergebnis in laufender Saison</p>
+                            </div>
+                        </div>
+                    </li>-->
+
+                </ul>
+            </div>
+        </content>
+
+        <!--<footer>
+            <a href="#">Impressum</a>
+        </footer>-->
+
+
+        <script type="text/template" id="listEntry">
+            <li class="teamInfo" lat="<%= lat %>" long="<%= long %>" teamID="<%= teamID %>">
+                <div class="teamsListEntry">
+                    <div class="teamLogoContainer">
+                        <div class="teamLogo"></div>
+                    </div>
+                    <div class="teamDetailsContainer">
+                        <h4><%= name %></h4>
+                        <p><%= stadion %>, <%= maxFans %></p>
+                        <a href="<%= website %>" target="_blank">zur Homepage</a>
+                    </div>
+                    <div class="scoreContainer">
+                        <div class="scoreBox score">
+                            <p>- : -</p>
+                        </div>
+                        <div class="scoreBox lastScoreText">
+                            <p>Ergebnis in laufender Saison</p>
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <div class="expandButton"></div>
+                    </div>
+                </div>
+                <div class="teamStats hidden">platz für Statistiken</div>
+            </li>
+        </script>
+        <script type="text/template" id="additionalDataJSON">
+            [
+                    {
+                        "teamID": 1718,
+                        "name": "Fortuna Köln",
+                        "lat": 50.917328,
+                        "long": 6.943432,
+                        "stadion": "Südstadion",
+                        "addressStreet": "Am Vorgebirgstor 35",
+                        "addressTown": "50969 Köln",
+                        "maxFans": "14.944 Plätze",
+                        "website": "https://www.fortuna-koeln.de/",
+                        "logoPath": "res/img/teamLogos/koeln.svg"
+                    },
+                    {
+                        "teamID": 107,
+                        "name": "MSV Duisburg",
+                        "lat": 51.408923,
+                        "long": 6.778704,
+                        "stadion": "Schauinsland-Reisen-Arena",
+                        "addressStreet": "Margaretenstraße 5-7",
+                        "addressTown": "47055 Duisburg",
+                        "maxFans": "31.500 Plätze",
+                        "website": "https://www.msv-duisburg.de/",
+                        "logoPath": "res/img/teamLogos/duisburg.svg"
+                    },
+                    {
+                        "teamID": 36,
+                        "name":"VfL Osnabrück",
+                        "lat": 52.280717,
+                        "long": 8.071351,
+                        "stadion": "Osnatel-Arena",
+                        "addressStreet": "Scharnhorststraße 50",
+                        "addressTown": "49084 Osnabrück",
+                        "maxFans": "16.667 Plätze",
+                        "website": "http://www.vfl.de/startseite.html",
+                        "logoPath": "res/img/teamLogos/osnabrueck.svg"
+                    },
+                    {
+                        "teamID": 183,
+                        "name": "VfR Aalen",
+                        "lat": 48.840497,
+                        "long": 10.072698,
+                        "stadion": "Scholz Arena",
+                        "addressStreet": "Stadionweg 5",
+                        "addressTown": "73430 Aalen",
+                        "maxFans": "14.500 Plätze",
+                        "website": "http://www.vfr-aalen.de/",
+                        "logoPath": "res/img/teamLogos/aalen.svg"
+                    },
+                    {
+                        "teamID": 174,
+                        "name": "SV Wehen Wiesbaden",
+                        "lat": 50.071155,
+                        "long": 8.256515,
+                        "stadion": "Brita-Arena",
+                        "addressStreet": "Berliner Str. 9",
+                        "addressTown": "65189 Wiesbaden",
+                        "maxFans": "12.566 Plätze",
+                        "website": "http://www.svwehen-wiesbaden.de/",
+                        "logoPath": "res/img/teamLogos/wiesbaden.svg"
+                    },
+                    {
+                        "teamID": 202,
+                        "name": "Chemnitzer FC",
+                        "lat": 50.842094,
+                        "long": 12.945476,
+                        "stadion": "community4you Arena",
+                        "addressStreet": "Gellertstraße",
+                        "addressTown": "09130 Chemnitz",
+                        "maxFans": "18.7000 Plätze",
+                        "website": "http://www.chemnitzerfc.de/",
+                        "logoPath": "res/img/teamLogos/chemnitz.svg"
+                    },
+                    {
+                        "teamID": 191,
+                        "name": "Sportfreunde Lotte",
+                        "lat": 52.270883,
+                        "long": 7.920376,
+                        "stadion": "Frimo Stadion",
+                        "addressStreet": "Jahnstraße 8",
+                        "addressTown": "49504 Lotte",
+                        "maxFans": "7.474 Plätze",
+                        "website": "http://www.sf-lotte.de/",
+                        "logoPath": "res/img/teamLogos/lotte.png"
+                    },
+                    {
+                        "teamID": 529,
+                        "name": "SG Sonnenhof Großaspach",
+                        "lat": 48.980333,
+                        "long": 9.393053,
+                        "stadion": "mechatronik Arena",
+                        "addressStreet": "Im Fautenhau 1",
+                        "addressTown": "71546 Aspach-Großaspach",
+                        "maxFans": "10.001 Plätze",
+                        "website": "http://www.sg94.de/",
+                        "logoPath": "res/img/teamLogos/grossaspach.svg"
+                    },
+                    {
+                        "teamID": 208,
+                        "name": "Hallescher FC",
+                        "lat": 51.465346,
+                        "long": 11.962135,
+                        "stadion": "Erdgas Sportpark",
+                        "addressStreet": "Kantstraße 2",
+                        "addressTown": "06110 Halle (Saale)",
+                        "maxFans": "15.057 Plätze",
+                        "website": "http://www.hallescherfc.de/",
+                        "logoPath": "res/img/teamLogos/halle.svg"
+                    },
+                    {
+                        "teamID": 102,
+                        "name": "FC Hansa Rostock",
+                        "lat": 54.084975,
+                        "long": 12.095217,
+                        "stadion": "Ostseestadion",
+                        "addressStreet": "Kopernikusstraße 17",
+                        "addressTown": "18057 Rostock",
+                        "maxFans": "29.000 Plätze",
+                        "website": "http://www.fc-hansa.de/",
+                        "logoPath": "res/img/teamLogos/rostock.svg"
+                    },
+                    {
+                        "teamID": 176,
+                        "name": "FC Rot-Weiss Erfurt",
+                        "lat": 50.960308,
+                        "long": 11.037343,
+                        "stadion": "Steigerwaldstadion",
+                        "addressStreet": "Arnstädter Str. 55",
+                        "addressTown": "99096 Erfurt",
+                        "maxFans": "18.611 Plätze",
+                        "website": "http://www.rot-weiss-erfurt.de/",
+                        "logoPath": "res/img/teamLogos/erfurt.svg"
+                    },
+                    {
+                        "teamID": 104,
+                        "name": "Holstein Kiel",
+                        "lat": 54.349241,
+                        "long": 10.123652,
+                        "stadion": "Holstein-Stadion",
+                        "addressStreet": "Westring 501",
+                        "addressTown": "24106 Kiel",
+                        "maxFans": "10.200 Plätze",
+                        "website": "http://holstein-kiel.de/",
+                        "logoPath": "res/img/teamLogos/kiel.svg"
+                    },
+                    {
+                        "teamID": 1979,
+                        "name": "FSV Zwickau",
+                        "lat": 50.697320,
+                        "long": 12.485993,
+                        "stadion": "Westsachsenstadion",
+                        "addressStreet": "Geinitzstraße 33",
+                        "addressTown": "08056 Zwickau",
+                        "maxFans": " Plätze",
+                        "website": "http://www.fsv-zwickau.de/",
+                        "logoPath": "res/img/teamLogos/zwickau.svg"
+                    },
+                    {
+                        "teamID": 78,
+                        "name": "1. FC Magdeburg",
+                        "lat": 52.125016,
+                        "long": 11.670679,
+                        "stadion": "MDCC-Arena",
+                        "addressStreet": "Heinz-Krügel-Platz 1",
+                        "addressTown": "39114 Magdeburg",
+                        "maxFans": "26.000 Plätze",
+                        "website": "http://www.fc-magdeburg.de/",
+                        "logoPath": "res/img/teamLogos/magdeburg.svg"
+                    },
+                    {
+                        "teamID": 31,
+                        "name": "SC Paderborn 07",
+                        "lat": 51.730630,
+                        "long": 8.711071,
+                        "stadion": "Benteler-Arena",
+                        "addressStreet": "Paderborner Str. 89",
+                        "addressTown": "33104 Paderborn",
+                        "maxFans": "5.800 Plätze",
+                        "website": "http://www.scp07.de/",
+                        "logoPath": "res/img/teamLogos/paderborn.svg"
+                    },
+                    {
+                        "teamID": 135,
+                        "name": "Werder Bremen II",
+                        "lat": 53.063967,
+                        "long": 8.842766,
+                        "stadion": "Weserstadion Platz 11",
+                        "addressStreet": "Franz-Böhmert-Straße 8",
+                        "addressTown": "28205 Bremen",
+                        "maxFans": "5.500 Plätze",
+                        "website": "http://www.werder.de/",
+                        "logoPath": "res/img/teamLogos/bremen.svg"
+                    },
+                    {
+                        "teamID": 172,
+                        "name": "FSV Frankfurt",
+                        "lat": 50.128254,
+                        "long": 8.723436,
+                        "stadion": "Frankfurter Volksbank Stadion",
+                        "addressStreet": "Richard-Herrmann-Platz 1",
+                        "addressTown": "60386 Frankfurt am Main",
+                        "maxFans": "12.542 Plätze",
+                        "website": "http://www.fsv-frankfurt.de/cms/index.php?id=4",
+                        "logoPath": "res/img/teamLogos/frankfurt.svg"
+                    },
+                    {
+                        "teamID": 196,
+                        "name": "1. FSV Mainz 05 II",
+                        "lat": 49.983982,
+                        "long": 8.224568,
+                        "stadion": "Opel Arena",
+                        "addressStreet": "Eugen-Salomon-Straße 1",
+                        "addressTown": "55128 Mainz",
+                        "maxFans": "34.000 Plätze",
+                        "website": "http://www.mainz05.de/mainz05/home.html",
+                        "logoPath": "res/img/teamLogos/mainz.svg"
+                    },
+                    {
+                        "teamID": 188,
+                        "name": "Preußen Münster",
+                        "lat": 51.929794,
+                        "long": 7.624562,
+                        "stadion": "Preußen Münster",
+                        "addressStreet": "Hammer Str. 304",
+                        "addressTown": "48153 Münster",
+                        "maxFans": "15.050 Plätze",
+                        "website": "http://www.scpreussen-muenster.de/",
+                        "logoPath": "res/img/teamLogos/muenster.svg"
+                    }
+                ]
+
+        </script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script type="text/javascript" src="js/EventPublisher.js"></script>
+        <script type="text/javascript" src="js/LigaDBController.js"></script>
+        <script type="text/javascript" src="js/JahntistikApp.js"></script>
+        <script type="text/javascript" src="js/OpponentsListView.js"></script>
+        <script type="text/javascript" src="js/MapController.js"></script>
+        <script>
+            App.JahntistikApp.init();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    background-image: url("../img/stuehle.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    height: 10vH;
+    width: 100%;
+    background-color: #E2001A;
+    color: white;
+    z-index: 10;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+    transition: border-bottom 200ms ease-in-out;
+}
+
+header nav a:hover {
+    /*color: red;*/
+    border-bottom: 5px solid #ecf0f1;
+}
+
+.currentPage {
+    border-bottom: 5px solid #ecf0f1;
+}
+
+header .teamLogo {
+    height: 100%;
+    width: 50px;
+    background-image: url("../img/teamLogos/ssvJahnRegensburg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 20px;
+}
+
+content {
+    position: absolute;
+    z-index: -1;
+    top: 12%;
+    width: 100%;
+    padding-top: 10px;
+}

@@ -1,60 +1,7 @@
-body{
-    margin: 0;
-    background-image: url("../img/stuehle.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    padding: 5px;
-    height: 10vH;
-    width: 100%;
-    background-color: #E2001A;
-    color: white;
-    z-index: 10;
-}
-
-header a {
-    text-decoration: none;
-    color: white;
-    margin: 20px;
-    transition: border-bottom 200ms ease-in-out;
-}
-
-header a:hover {
-    /*color: red;*/
-    border-bottom: 5px solid #ecf0f1;
-}
-
-.currentPage {
-    border-bottom: 5px solid #ecf0f1;
-}
-
-header .teamLogo {
-    height: 100%;
-    width: 50px;
-    background-image: url("../img/teamLogos/ssvJahnRegensburg.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-right: 20px;
-}
-
-content {
+.overviewContent {
     display: flex;
     justify-content: space-around;
-    position: absolute;
-    z-index: -1;
-    top: 12%;
-    width: 100%;
-    padding-top: 10px;
+
 }
 
 content .mapContainer {
@@ -88,11 +35,29 @@ content .teamInfoContainer {
     padding: 0;
 }
 
-.teamsList li{
+.teamInfo {
+    opacity: 0;
+}
+
+.teamInfo.isVisible {
+    animation: entryFade 400ms ease-in forwards;
+}
+
+@-webkit-keyframes entryFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    90% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.teamsList .teamInfo{
     list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 95%;
     background: #ecf0f1;
     border: 1px solid black;
@@ -102,6 +67,12 @@ content .teamInfoContainer {
     padding: 5px;
     cursor: pointer;
     box-shadow: 1px 1px 3px black;
+}
+
+.teamsList .teamsListEntry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .teamsList li a {
@@ -129,6 +100,23 @@ content .teamInfoContainer {
 .clickedExpandButton {
     transform:rotate(180deg);
     /*background-image: url("../img/expand-arrow.svg");*/
+}
+
+.teamStats {
+    margin-top: 10px;
+    width: 100%;
+    opacity: 0;
+    border-top: 2px solid black;
+    transition: opacity 300ms ease-in-out;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    opacity: 1;
 }
 
 .resetViewButton {
