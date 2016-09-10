@@ -19,11 +19,9 @@
                 <a href="overview.html" class="currentPage">Überblick</a>
                 <a href="statistik.html">Statstik</a>
                 <a href="kader.html">Kader</a>
-                <a href="#">Stadion</a>
+                <a href="stadion.html">Stadion</a>
             </nav>
         </header>
-
-
 
         <content class="overviewContent">
             <div class="mapContainer">
@@ -31,26 +29,6 @@
             </div>
             <div class="teamInfoContainer">
                 <ul class="teamsList">
-
-                    <!--<li MatchID="40086" class="teamsListEntry">
-                        <div class="teamLogoContainer">
-                            <div class="teamLogo"></div>
-                        </div>
-                        <div class="teamDetailsContainer">
-                            <h4>Team</h4>
-                            <p>Stadion, Zuschauerzahl</p>
-                            <a href="#">Link zur Website</a>
-                        </div>
-                        <div class="scoreContainer">
-                            <div class="scoreBox score">
-                                <p>0 : 0</p>
-                            </div>
-                            <div class="scoreBox lastScoreText">
-                                <p>Ergebnis in laufender Saison</p>
-                            </div>
-                        </div>
-                    </li>-->
-
                 </ul>
             </div>
         </content>
@@ -75,17 +53,37 @@
                         <div class="scoreBox score">
                             <p>- : -</p>
                         </div>
+                        <div class="scoreBox score2">
+                            <p>- : -</p>
+                        </div>
                         <div class="scoreBox lastScoreText">
-                            <p>Ergebnis in laufender Saison</p>
+                            <p>Ergebnisse in laufender Saison</p>
                         </div>
                     </div>
                     <div class="buttonContainer">
                         <div class="expandButton"></div>
                     </div>
                 </div>
-                <div class="teamStats hidden">platz für Statistiken</div>
+                <div class="teamStats hidden">
+                    <b>Resultate aus den letzten maximal fünf Spielen</b>
+                    <table class="statsTable">
+                        <tr>
+                            <td>Siegen:</td>
+                            <td class="victories"></td>
+                        </tr>
+                        <tr>
+                            <td>Unentschieden:</td>
+                            <td class="ties"></td>
+                        </tr>
+                        <tr>
+                            <td>Niederlagen:</td>
+                            <td class="defeats"></td>
+                        </tr>
+                    </table>
+                </div>
             </li>
         </script>
+
         <script type="text/template" id="additionalDataJSON">
             [
                     {
@@ -240,7 +238,7 @@
                         "stadion": "Westsachsenstadion",
                         "addressStreet": "Geinitzstraße 33",
                         "addressTown": "08056 Zwickau",
-                        "maxFans": " Plätze",
+                        "maxFans": "5.000 Plätze",
                         "website": "http://www.fsv-zwickau.de/",
                         "logoPath": "res/img/teamLogos/zwickau.svg"
                     },

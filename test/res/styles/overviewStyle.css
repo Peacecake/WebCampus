@@ -179,7 +179,7 @@ div .scoreBox p {
     text-align: center;
 }
 
-.score {
+.score, .score2 {
     font-size: 1.5em;
 }
 

@@ -2,6 +2,10 @@ body {
     overflow: hidden;
 }
 
+content a {
+    color: #E2001A;
+}
+
 .homeContent {
     display: flex;
     align-items: flex-start;
