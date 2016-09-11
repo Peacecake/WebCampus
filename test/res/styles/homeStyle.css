@@ -30,7 +30,7 @@ content a {
 .textContent {
     overflow: auto;
     position: relative;
-    height: 92%;
+    height: 91%;
     width: 100%;
     border: 2px solid black;
     border-radius: 5px;

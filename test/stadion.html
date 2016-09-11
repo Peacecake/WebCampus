@@ -3,8 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Jahntistik - Stadion</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
         <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Ubuntu:300" rel="stylesheet">
         <link rel="stylesheet" href="res/styles/mainStyle.css">
+        <link rel="stylesheet" href="res/styles/stadionStyle.css">
+        <link rel="stylesheet" href="res/styles/modalStyle.css">
     </head>
     <body>
         <header>
@@ -19,5 +22,69 @@
                 <a href="stadion.html" class="currentPage">Stadion</a>
             </nav>
         </header>
+
+        <content>
+            <div class="stadionContent">
+                <h2>Continental Arena Regensburg</h2>
+                <div class="historyContainer">
+                    <h3>Geschichte</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+
+                <div class="driveContainer">
+                    <h3>Anfahrt</h3>
+                    <div class="mapContainer">
+                        <div id="map"></div>
+                    </div>
+                    <h4>Adresse</h4>
+                    <p>
+                        Continental Arena Regenburg<br>
+                        Franz-Josef-Strauß-Allee 22<br>
+                        93053 Regensburg
+                    </p>
+                    <h4>Busverbindungen:</h4>
+                    <ul>
+                        <li>Linie 3</li>
+                        <li>Linie F</li>
+                    </ul>
+                </div>
+
+                <div class="otherInfosContainer">
+                    <h3>Weitere Informationen</h3>
+                    <div class="infoButtons">
+                        <input type="button" modal="priceModal" name="infoButton" value="Preise" id="priceButton">
+                        <input type="button" modal="planModal" name="infoButton" value="Stadionplan" id="planButton">
+                        <a href="http://www.ssv-jahn.de/ticketshop" target="_blank">
+                            <input type="button" name="infoButton" value="Tickets kaufen" id="ticketsButton">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </content>
+
+        <div class="modal priceModal">
+            <div class="modalContainer">
+              <span class="closeModal">x</span>
+              <h3>Preise</h3>
+
+            </div>
+        </div>
+
+        <div class="modal planModal">
+            <div class="modalContainer">
+              <span class="closeModal">x</span>
+              <h3>Stadionplan</h3>
+
+            </div>
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
+        <script type="text/javascript" src="js/stadion/StadionMap.js"></script>
+        <script type="text/javascript" src="js/stadion/Modal.js"></script>
     </body>
 </html>

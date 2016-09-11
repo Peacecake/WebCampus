@@ -1,0 +1,75 @@
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modalContainer {
+    position: relative;
+    background: #ecf0f1;
+    margin: 15% auto;
+    padding: 20px;
+    padding-top: 10px;
+    border: 1px solid #E2001A;
+    width: 70%;
+    box-shadow: 1px 1px 3px black;
+    animation: modalAnimation 400ms;
+}
+
+.closeModal {
+    float: right;
+    color: lightgrey;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.closeModal:hover {
+    color: #E2001A;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalContainer h3 {
+    color: #E2001A;
+    font-style: italic;
+    font-weight: normal;
+    border-bottom: 1px solid #E2001A;
+}
+
+.modalContainer input[type=checkbox] {
+    margin: 5px;
+}
+
+.modalContainer input[type=button] {
+    background: #E2001A;
+    color: #ecf0f1;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: italic;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 30px;
+}
+
+.modalContainer input[type=button]:hover {
+    cursor: pointer;
+    background:#cb0017;
+}
+
+@keyframes modalAnimation {
+    0% {
+        top: -300px;
+        opacity: 0;
+    }
+    100% {
+        top: 0px;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,56 @@
+content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stadionContent {
+    background-color: #ecf0f1;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    width: 80vW;
+}
+
+h2 {
+    color: #E2001A;
+    border-bottom: 1px solid #E2001A;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.mapContainer {
+    background-color: lightgreen;
+    height: 30vH;
+    /*width: 100%;*/
+    box-sizing: border-box;
+}
+
+#map{
+    height: 100%;
+    width: 100%;
+}
+
+.infoButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input[name=infoButton] {
+    color: white;
+    background-color: #e2001a;
+    border-color: #e2001a;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    height: 50px;
+    width: 100px;
+}
+
+input[name=infoButton]:hover{
+    cursor: pointer;
+    background-color: #cb0017;
+}
