@@ -60,3 +60,8 @@ content {
     width: 100%;
     padding-top: 10px;
 }
+@media all and (max-width: 580px) {
+  header {
+    position: initial; 
+  }
+}
