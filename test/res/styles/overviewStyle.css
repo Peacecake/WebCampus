@@ -215,5 +215,17 @@ footer a{
   .overviewContent{
     /* On small screens, we are no longer using row direction but column */
     flex-direction: column;
+    width: 100%;
   }
+
+  .mapContainer{
+    order: 2;
+    margin-top: 20px;
+    width: 100% !important;
+  }
+  .teamInfoContainer {
+    order: 1;
+    width: 100% !important;
+  }
+
 }

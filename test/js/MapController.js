@@ -3,14 +3,18 @@ App.MapController = (function (options) {
     var that = {},
         mapContainer,
         map,
-        resetViewButton;
+        resetViewButton,
+        mq;
 
     function init() {
         mapContainer = options.mapContainer;
+        mq=window.matchMedia( "(min-width: 800px)" );
         initializeMap();
         setViewToOrigin();
         addResetViewButton();
+        if(mq.matches){
         enableAutoScroll();
+        }
         return that;
     }
 
