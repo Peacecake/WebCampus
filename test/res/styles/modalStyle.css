@@ -73,3 +73,14 @@
         opacity: 1;
     }
 }
+
+@-moz-keyframes modalAnimation {
+    0% {
+        top: -300px;
+        opacity: 0;
+    }
+    100% {
+        top: 0px;
+        opacity: 1;
+    }
+}

@@ -54,3 +54,16 @@ input[name=infoButton]:hover{
     cursor: pointer;
     background-color: #cb0017;
 }
+
+.priceModal.modalContainer {
+    margin: 10% auto !important;
+}
+
+.priceModal table {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.priceModal th, .priceModal td {
+    text-align: left;
+}
