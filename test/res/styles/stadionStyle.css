@@ -67,3 +67,14 @@ input[name=infoButton]:hover{
 .priceModal th, .priceModal td {
     text-align: left;
 }
+
+.planModal.imgContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.imgContainer img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
