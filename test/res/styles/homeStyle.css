@@ -63,6 +63,7 @@ content a {
 .twitterContent iframe {
     position: relative;
     height: 100% !important;
+    width: 100% !important;
 }
 
 p::first-line {
@@ -76,4 +77,51 @@ p::first-line {
     font-style: italic;
     margin-right: 5px;
     /*line-height: 1.5em;*/
+}
+
+@media all and (max-width: 800px) {
+  .textContainer{
+    width: 100%;
+  }
+  .textContent{
+    padding: 7px;
+    margin: 0;
+  }
+  .twitterContent{
+    margin: 0;
+  }
+
+  .twitterContainer{
+    width:100%;
+  }
+  .content{
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+  content{
+    top: 0;
+    padding-top: 20%;
+  }
+}
+  @media all and (max-width: 580px) {
+    .textContainer{
+      width: 100%;
+    }
+    .textContent, .twitterContent{
+      padding: 7px;
+      margin: 0;
+    }
+
+    .twitterContainer{
+      width:100%;
+    }
+    .content{
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+    content{
+      top: 12%;
+      padding-top: 20%;
+    }
+
 }
