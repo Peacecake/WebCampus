@@ -13,7 +13,7 @@ App.MapController = (function (options) {
         setViewToOrigin();
         addResetViewButton();
         if(mq.matches){
-        enableAutoScroll();
+            enableAutoScroll();
         }
         return that;
     }

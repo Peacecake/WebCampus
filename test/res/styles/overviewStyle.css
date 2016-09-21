@@ -1,7 +1,7 @@
 .overviewContent {
     display: flex;
     justify-content: space-around;
-
+    max-width:2000px;
 }
 
 content .mapContainer {
