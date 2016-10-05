@@ -5,6 +5,7 @@
         <title>Jahntistik - Statistik</title>
         <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Ubuntu:200" rel="stylesheet">
         <link rel="stylesheet" href="res/styles/mainStyle.css">
+        <link rel="stylesheet" href="res/styles/modalStyle.css">
         <link rel="stylesheet" href="res/styles/statistik_style.css">
     </head>
     <body>
@@ -22,13 +23,59 @@
         </header>
 
         <content >
+        <div class ="StatsContent">
+          <h1 class="Saisonverlauf">Saisonverlauf</h1>
         <div class ="Chartrow">
         <canvas id="LineChart"></canvas>
         </div>
         <div class ="Chartrow">
-          <canvas id="Pie1516"></canvas>
+
+          <ul>
+            <li><span modal="Modal1516" id="Button1516">1516</span></li>
+            <li><span modal="Modal1415" id="Button1415">1415</span></li>
+            <li><span modal="Modal1314" id="Button1314">1314</span></li>
+            <li><span modal="Modal1213" id="Button1213">1213</span></li>
+            <li><span modal="Modal1112" id="Button1112">1112</span></li>
+          </ul>
         </div>
+      </div>
         </content>
+
+        <div class="modal Modal1516">
+            <div class="modalContainer">
+              <span class="closeModal">x</span>
+              <h3>Jahntistik der Saison 2015/16</h3>
+              <canvas id="Pie1516"></canvas>
+              </div>
+        </div>
+        <div class="modal Modal1415">
+            <div class="modalContainer">
+              <span class="closeModal">x</span>
+              <h3>Jahntistik der Saison 2014/15</h3>
+              <canvas id="Pie1415"></canvas>
+              </div>
+        </div>
+        <div class="modal Modal1314">
+            <div class="modalContainer">
+              <span class="closeModal">x</span>
+              <h3>Jahntistik der Saison 2013/14</h3>
+              <canvas id="Pie1314"></canvas>
+              </div>
+        </div>
+        <div class="modal Modal1213">
+            <div class="modalContainer">
+              <span class="closeModal">x</span>
+              <h3>Jahntistik der Saison 2012/13</h3>
+              <canvas id="Pie1213"></canvas>
+              </div>
+        </div>
+        <div class="modal Modal1112">
+            <div class="modalContainer">
+              <span class="closeModal">x</span>
+              <h3>Jahntistik der Saison 2011/12</h3>
+              <canvas id="Pie1112"></canvas>
+              </div>
+        </div>
 
 
 
@@ -47,8 +94,10 @@
           ]
 
         </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js">
         </script>
-        <script type="text/javascript" src="js/statistik.js"></script>
+        <script type="text/javascript" src="js/Statistik/statistik.js"></script>
+        <script type="text/javascript" src="js/Statistik/Modal.js"></script>
   </body>
 </html>
