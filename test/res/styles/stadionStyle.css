@@ -22,6 +22,17 @@ content {
   margin-left: 5px;
 }
 
+.imgWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgWrapper div.imgCaption {
+  font-size: 10pt;
+}
+
 .imgWrapper img {
   max-width: 500px;
   height: auto;
@@ -121,10 +132,34 @@ input[name=infoButton]:hover{
     margin-left: auto;
     margin-right: auto;
 }
-@media all and (max-width: 1150px) {
 
+@media all and (max-width: 1150px) {
   .historyContainer{
     /* On small screens, we are no longer using row direction but column */
     flex-direction: column;
     align-items: center;
   }
+}
+
+@media all and (max-width: 800px) {
+  content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+  }
+  .main {
+    width: 90%;
+    order: 1;
+  }
+  .sidebar {
+    width: 90%;
+    order: 2;
+    margin-left: 0px;
+    margin-top: 15px;
+  }
+  .imgContainer img {
+    max-width: 450px;
+    height: auto;
+  }
+}
