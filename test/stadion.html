@@ -17,52 +17,66 @@
             <nav>
                 <a href="index.html">Home</a>
                 <a href="overview.html">Überblick</a>
-                <a href="statistik.html">Statstik</a>
+                <a href="Statistik.html">Statstik</a>
                 <a href="kader.html">Kader</a>
                 <a href="stadion.html" class="currentPage">Stadion</a>
             </nav>
         </header>
 
         <content>
+          <div class="main">
             <div class="stadionContent">
-                <h2>Continental Arena Regensburg</h2>
-                <div class="historyContainer">
-                    <h3>Geschichte</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
+              <h2>Continental Arena Regensburg</h2>
+              <div class="historyContainer">
+                <div class="textWrapper">
+                  <h3>Geschichte</h3>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <h3>Weitere Informationen</h3>
+                  <ul>
+                    <li><span modal="priceModal" id="priceButton">Preise</span></li>
+                    <li><span modal="planModal" id="planButton">Stadionplan</span></li>
+                    <li><a href="http://www.ssv-jahn.de/ticketshop" target="_blank"><span>Tickets kaufen</span></a></li>
+                  </ul>
+                  <!--<div class="infoButtons">
+                      <input type="button" modal="priceModal" name="infoButton" value="Preise" id="priceButton">
+                      <input type="button" modal="planModal" name="infoButton" value="Stadionplan" id="planButton">
+                      <a href="http://www.ssv-jahn.de/ticketshop" target="_blank">
+                          <input type="button" name="infoButton" value="Tickets kaufen" id="ticketsButton">
+                      </a>
+                  </div>-->
                 </div>
-
-                <div class="driveContainer">
-                    <h3>Anfahrt</h3>
-                    <div class="mapContainer">
-                        <div id="map"></div>
-                    </div>
-                    <h4>Adresse</h4>
-                    <p>
-                        Continental Arena Regenburg<br>
-                        Franz-Josef-Strauß-Allee 22<br>
-                        93053 Regensburg
-                    </p>
-                    <h4>Busverbindungen:</h4>
-                    <ul>
-                        <li>Linie 3</li>
-                        <li>Linie F</li>
-                    </ul>
+                <div class="imgWrapper">
+                  <img src="/res/img/conti-arena.jpg" alt="Continental Arena Regensburg"/>
+                  Von <a href="//commons.wikimedia.org/w/index.php?title=User:Zeddi2k6&amp;action=edit&amp;redlink=1" class="new" title="User:Zeddi2k6 (page does not exist)">Zeddi2k6</a> - <span class="int-own-work" lang="de">Eigenes Werk</span>, <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC-BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=43334269">https://commons.wikimedia.org/w/index.php?curid=43334269</a>
                 </div>
-
-                <div class="otherInfosContainer">
-                    <h3>Weitere Informationen</h3>
-                    <div class="infoButtons">
-                        <input type="button" modal="priceModal" name="infoButton" value="Preise" id="priceButton">
-                        <input type="button" modal="planModal" name="infoButton" value="Stadionplan" id="planButton">
-                        <a href="http://www.ssv-jahn.de/ticketshop" target="_blank">
-                            <input type="button" name="infoButton" value="Tickets kaufen" id="ticketsButton">
-                        </a>
-                    </div>
-
-                </div>
+              </div>
             </div>
+          </div>
+
+          <div class="sidebar">
+            <div class="stadionContent first">
+              <div class="driveContainer">
+                  <h3>Anfahrt</h3>
+                  <div class="mapContainer">
+                      <div id="map"></div>
+                  </div>
+                  <h4>Adresse</h4>
+                  <p>
+                      Continental Arena Regenburg<br>
+                      Franz-Josef-Strauß-Allee 22<br>
+                      93053 Regensburg
+                  </p>
+                  <h4>Busverbindungen:</h4>
+                  <ul>
+                      <li>Linie 3</li>
+                      <li>Linie F</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
 
         </content>
 

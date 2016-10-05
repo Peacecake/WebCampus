@@ -1,9 +1,25 @@
 content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     margin-bottom: 20px;
+    height: 80vH;
+    font-size: 15pt;
+}
+
+.main {
+  width: 60vW;
+  margin-right: 5px;
+  max-width: 1024px;
+}
+
+.sidebar {
+  width: 30vW;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5px;
 }
 
 .stadionContent {
@@ -12,8 +28,16 @@ content {
     border-radius: 5px;
     box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.7);
     padding: 10px;
-    width: 80vW;
-    max-width: 1024px;
+    /*width: 80vW;*/
+    /*margin-bottom: 20px;*/
+}
+
+/*.main div.stadionContent {
+  width: 100%;
+}*/
+
+.sidebar div.first {
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -26,7 +50,7 @@ h2 {
 .mapContainer {
     background-color: lightgreen;
     height: 30vH;
-    /*width: 100%;*/
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -39,6 +63,13 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.main li span, .main a span{
+  color: #e1001a;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 3px;
 }
 
 input[name=infoButton] {
@@ -54,6 +85,12 @@ input[name=infoButton] {
 input[name=infoButton]:hover{
     cursor: pointer;
     background-color: #cb0017;
+}
+
+.historyContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .priceModal.modalContainer {
