@@ -53,6 +53,21 @@ header .teamLogo {
     margin-right: 20px;
 }
 
+header .sideMenuButton {
+  position: fixed;
+  left: 0;
+  height: 10%;
+  width: 5%;
+  background-image: url("../img/menuButton.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+header .sideMenuButton:hover {
+  background-image: url("../img/menuButtonHover.svg");
+}
+
 content {
     position: absolute;
     z-index: -1;
@@ -60,8 +75,27 @@ content {
     width: 100%;
     padding-top: 10px;
 }
+
+
+.sideNav{
+  margin-top: 10vH;
+  height: 90vH; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+
+
 @media all and (max-width: 580px) {
   header {
-    position: initial; 
+    position: initial;
   }
 }
