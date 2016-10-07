@@ -1,119 +1,114 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Jahntistik - Statistik</title>
-        <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Ubuntu:200" rel="stylesheet">
-        <link rel="stylesheet" href="res/styles/mainStyle.css">
-        <link rel="stylesheet" href="res/styles/modalStyle.css">
-        <link rel="stylesheet" href="res/styles/statistik_style.css">
-    </head>
-    <body>
-        <header>
-            <div class="sideMenuButton" onClick="toggleNavVisibility()"></div>
 
-            <div class="teamLogo"></div>
-            <h1>Jahntistik</h1>
+<head>
+    <meta charset="utf-8">
+    <title>Jahntistik - Statistik</title>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Ubuntu:200" rel="stylesheet">
+    <link rel="stylesheet" href="res/styles/mainStyle.css">
+    <link rel="stylesheet" href="res/styles/modalStyle.css">
+    <link rel="stylesheet" href="res/styles/statistik_style.css">
+</head>
 
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="overview.html">Überblick</a>
-                <a href="statistik.html" class="currentPage">Statstik</a>
-                <a href="kader.html">Kader</a>
-                <a href="stadion.html">Stadion</a>
-            </nav>
-        </header>
+<body>
+    <header>
+        <div class="sideMenuButton" onClick="toggleNavVisibility()"></div>
 
-        <content >
-        <div class ="StatsContent">
-          <h1 class="Saisonverlauf">Saisonverlauf</h1>
-        <div class ="Chartrow">
-        <canvas id="LineChart"></canvas>
-        </div>
-        <div class ="Chartrow">
+        <div class="teamLogo"></div>
+        <h1>Jahntistik</h1>
 
-          <ul>
-            <li><span modal="Modal1516" id="Button1516">1516</span></li>
-            <li><span modal="Modal1415" id="Button1415">1415</span></li>
-            <li><span modal="Modal1314" id="Button1314">1314</span></li>
-            <li><span modal="Modal1213" id="Button1213">1213</span></li>
-            <li><span modal="Modal1112" id="Button1112">1112</span></li>
-          </ul>
-        </div>
-      </div>
-        </content>
-
-        <div class="modal Modal1516">
-            <div class="modalContainer">
-              <span class="closeModal">x</span>
-              <h3>Jahntistik der Saison 2015/16</h3>
-              <canvas id="Pie1516"></canvas>
-              </div>
-        </div>
-        <div class="modal Modal1415">
-            <div class="modalContainer">
-              <span class="closeModal">x</span>
-              <h3>Jahntistik der Saison 2014/15</h3>
-              <canvas id="Pie1415"></canvas>
-              </div>
-        </div>
-        <div class="modal Modal1314">
-            <div class="modalContainer">
-              <span class="closeModal">x</span>
-              <h3>Jahntistik der Saison 2013/14</h3>
-              <canvas id="Pie1314"></canvas>
-              </div>
-        </div>
-        <div class="modal Modal1213">
-            <div class="modalContainer">
-              <span class="closeModal">x</span>
-              <h3>Jahntistik der Saison 2012/13</h3>
-              <canvas id="Pie1213"></canvas>
-              </div>
-        </div>
-        <div class="modal Modal1112">
-            <div class="modalContainer">
-              <span class="closeModal">x</span>
-              <h3>Jahntistik der Saison 2011/12</h3>
-              <canvas id="Pie1112"></canvas>
-              </div>
-        </div>
-
-        <div id="sideNav" class="sideNav hidden">
+        <nav>
             <a href="index.html">Home</a>
             <a href="overview.html">Überblick</a>
-            <a href="Statistik.html">Statistik</a>
+            <a href="statistik.html" class="currentPage">Statstik</a>
             <a href="kader.html">Kader</a>
             <a href="stadion.html">Stadion</a>
+        </nav>
+    </header>
+
+    <content>
+        <div class="StatsContent">
+            <h1 class="Saisonverlauf">Saisonverlauf</h1>
+            <div class="Chartrow">
+                <canvas id="LineChart"></canvas>
+            </div>
+            <div class="Chartrow">
+
+                <ul>
+                    <li><span modal="Modal1516" id="Button1516">1516</span></li>
+                    <li><span modal="Modal1415" id="Button1415">1415</span></li>
+                    <li><span modal="Modal1314" id="Button1314">1314</span></li>
+                    <li><span modal="Modal1213" id="Button1213">1213</span></li>
+                    <li><span modal="Modal1112" id="Button1112">1112</span></li>
+                </ul>
+            </div>
         </div>
+    </content>
 
-        <script type="text/template" id="data">
-          [
-          {"test1516":
-          [2,2,2,2,2,2,2,1,2,2,0,2,1,1,1,2,0,0,0,2,0,2,2,1,1,0,2,1,2,2,0,2,2,0]},
-          {"test1415":
-          [2,0,0,0,1,2,1,0,0,0,0,0,0,2,0,1,0,0,0,0,0,0,2,1,2,0,0,0,2,0,2,1,0,1,0,0,1,2]},
-          {"test1314":
-          [1,1,0,0,2,2,0,2,0,0,1,1,0,2,1,2,0,2,0,1,2,1,2,2,0,1,0,0,0,2,1,0,2,2,1,1,1,1]},
-          {"test1213":
-          [0,2,0,0,0,0,2,2,0,0,0,0,0,1,0,1,1,1,0,0,2,0,1,0,0,1,0,0,1,0,0,0,0,0]},
-          {"test1112":
-          [1,2,2,2,2,1,1,2,0,1,1,2,0,1,0,2,2,1,2,2,1,0,0,1,2,1,1,2,0,0,0,2,1,0,2,2,2,1]}
-          ]
+    <div class="modal Modal1516">
+        <div class="modalContainer">
+            <span class="closeModal">x</span>
+            <h3>Jahntistik der Saison 2015/16</h3>
+            <canvas id="Pie1516"></canvas>
+        </div>
+    </div>
+    <div class="modal Modal1415">
+        <div class="modalContainer">
+            <span class="closeModal">x</span>
+            <h3>Jahntistik der Saison 2014/15</h3>
+            <canvas id="Pie1415"></canvas>
+        </div>
+    </div>
+    <div class="modal Modal1314">
+        <div class="modalContainer">
+            <span class="closeModal">x</span>
+            <h3>Jahntistik der Saison 2013/14</h3>
+            <canvas id="Pie1314"></canvas>
+        </div>
+    </div>
+    <div class="modal Modal1213">
+        <div class="modalContainer">
+            <span class="closeModal">x</span>
+            <h3>Jahntistik der Saison 2012/13</h3>
+            <canvas id="Pie1213"></canvas>
+        </div>
+    </div>
+    <div class="modal Modal1112">
+        <div class="modalContainer">
+            <span class="closeModal">x</span>
+            <h3>Jahntistik der Saison 2011/12</h3>
+            <canvas id="Pie1112"></canvas>
+        </div>
+    </div>
 
-        </script>
+    <div id="sideNav" class="sideNav hidden">
+        <a href="index.html">Home</a>
+        <a href="overview.html">Überblick</a>
+        <a href="Statistik.html">Statistik</a>
+        <a href="kader.html">Kader</a>
+        <a href="stadion.html">Stadion</a>
+    </div>
 
-        <script>
-            function toggleNavVisibility() {
-                var sideNav = document.getElementById("sideNav");
-                sideNav.classList.toggle("hidden");
-            }
-        </script>
+    <script type="text/template" id="data">
+        [ {"test1516": [2,2,2,2,2,2,2,1,2,2,0,2,1,1,1,2,0,0,0,2,0,2,2,1,1,0,2,1,2,2,0,2,2,0]}, {"test1415": [2,0,0,0,1,2,1,0,0,0,0,0,0,2,0,1,0,0,0,0,0,0,2,1,2,0,0,0,2,0,2,1,0,1,0,0,1,2]}, {"test1314": [1,1,0,0,2,2,0,2,0,0,1,1,0,2,1,2,0,2,0,1,2,1,2,2,0,1,0,0,0,2,1,0,2,2,1,1,1,1]}, {"test1213": [0,2,0,0,0,0,2,2,0,0,0,0,0,1,0,1,1,1,0,0,2,0,1,0,0,1,0,0,1,0,0,0,0,0]}, {"test1112": [1,2,2,2,2,1,1,2,0,1,1,2,0,1,0,2,2,1,2,2,1,0,0,1,2,1,1,2,0,0,0,2,1,0,2,2,2,1]} ]
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js">
-        </script>
-        <script type="text/javascript" src="js/Statistik/statistik.js"></script>
-        <script type="text/javascript" src="js/Statistik/Modal.js"></script>
-  </body>
+    </script>
+
+    <script>
+        function toggleNavVisibility() {
+            var sideNav = document.getElementById("sideNav");
+            sideNav.classList.toggle("hidden");
+        }
+
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js">
+
+
+    </script>
+    <script type="text/javascript" src="js/Statistik/statistik.js"></script>
+    <script type="text/javascript" src="js/Statistik/Modal.js"></script>
+</body>
+
 </html>

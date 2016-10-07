@@ -8,11 +8,11 @@ App.MapController = (function (options) {
 
     function init() {
         mapContainer = options.mapContainer;
-        mq=window.matchMedia( "(min-width: 800px)" );
+        mq = window.matchMedia("(min-width: 800px)");
         initializeMap();
         setViewToOrigin();
         addResetViewButton();
-        if(mq.matches){
+        if (mq.matches) {
             enableAutoScroll();
         }
         return that;
@@ -35,13 +35,13 @@ App.MapController = (function (options) {
     function addResetViewButton() {
         //source: http://www.coffeegnome.net/control-button-leaflet/
         resetViewButton = L.Control.extend({
-            options:{
+            options: {
                 position: "topleft"
             },
-            onAdd: function(map) {
+            onAdd: function (map) {
                 var resetButtonContainer = L.DomUtil.create("div", "resetViewButton leaflet-bar leaflet-control leaflet-control-custom");
 
-                resetButtonContainer.onclick = function(){
+                resetButtonContainer.onclick = function () {
                     setViewToOrigin();
                 }
                 return resetButtonContainer;
@@ -52,10 +52,11 @@ App.MapController = (function (options) {
 
     function enableAutoScroll() {
         //source: http://stackoverflow.com/questions/1638895/how-do-i-make-a-div-move-up-and-down-when-im-scrolling-the-page
-        $(window).scroll(function(){
+        $(window).scroll(function () {
             $(mapContainer).stop().animate({
-                "marginTop": ($(window).scrollTop()) + "px", "marginLeft":($(window).scrollLeft()) + "px"
-            }, "slow" );
+                "marginTop": ($(window).scrollTop()) + "px",
+                "marginLeft": ($(window).scrollLeft()) + "px"
+            }, "slow");
         });
     }
 

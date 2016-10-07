@@ -17,9 +17,9 @@ App.OpponentsListView = (function (options) {
     function handleClick() {
         var data = {};
         $("ul.teamsList li").click(function (e) {
-            if(!$(e.target).is("a") && !$(e.target).is(".expandButton")) {
+            if (!$(e.target).is("a") && !$(e.target).is(".expandButton")) {
                 data.lat = $(this).attr("lat"),
-                data.long = $(this).attr("long");
+                    data.long = $(this).attr("long");
                 that.notifyAll("listItemClicked", data);
             }
         });
@@ -33,16 +33,16 @@ App.OpponentsListView = (function (options) {
 
     function writeResultScore(data) {
         var i, entryID, score, score2, listEntries = list.getElementsByTagName("li");
-        for(i = 0; i < listEntries.length; i++) {
+        for (i = 0; i < listEntries.length; i++) {
             entryID = parseInt(listEntries[i].getAttribute("teamid"));
-            if(entryID === data.TeamId) {
+            if (entryID === data.TeamId) {
                 score = listEntries[i].querySelector(".score p"),
-                score2 = listEntries[i].querySelector(".score2 p");
+                    score2 = listEntries[i].querySelector(".score2 p");
 
-                if(data.finished) {
+                if (data.finished) {
                     score.innerHTML = "" + data.scoreOne + " : " + data.scoreTwo + "";
                 }
-                if(data.secondFinished) {
+                if (data.secondFinished) {
                     score2.innerHTML = "" + data.secondScoreOne + " : " + data.secondScoreTwo + "";
                 }
             }
@@ -50,14 +50,14 @@ App.OpponentsListView = (function (options) {
     }
 
     function clearList() {
-        while(list.hasChildNodes()) {
+        while (list.hasChildNodes()) {
             list.removeChild(list.childNodes[0]);
         }
     }
 
     function fillList() {
         var i, tmpElement, listEntry, teamLogo, expandButton, teamsStats;
-        for(i = 0; i < data.length; i++) {
+        for (i = 0; i < data.length; i++) {
             listEntry = bindingFunction(data[i]);
             tmpElement = document.createElement("div");
             tmpElement.innerHTML = listEntry;
@@ -66,12 +66,12 @@ App.OpponentsListView = (function (options) {
             teamLogo.style.backgroundImage = "url(" + data[i].logoPath + ")";
 
             expandButton = tmpElement.querySelector(".expandButton");
-            $(expandButton).click(function(e){
+            $(expandButton).click(function (e) {
                 $(this).toggleClass("clickedExpandButton");
                 teamStats = $(this).parent().parent().next().get(0);
 
                 teamStats.classList.toggle("hidden");
-                setTimeout(function(){
+                setTimeout(function () {
                     teamStats.classList.toggle("shown");
                 }, 200);
             });
@@ -81,7 +81,7 @@ App.OpponentsListView = (function (options) {
     }
 
     function fadeIn() {
-        $(".teamInfo").each(function(i) {
+        $(".teamInfo").each(function (i) {
             setTimeout(function () {
                 $(".teamInfo").eq(i).addClass("isVisible");
             }, 300 * i);

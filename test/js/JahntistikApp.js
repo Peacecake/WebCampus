@@ -31,7 +31,7 @@ App.JahntistikApp = (function () {
 
     function onMatchDataAvailable(e) {
         var i, matchData = e.data;
-        for(i = 0; i < matchData.length; i++) {
+        for (i = 0; i < matchData.length; i++) {
             listView.writeResultScore(matchData[i]);
         }
     }
@@ -42,7 +42,7 @@ App.JahntistikApp = (function () {
 
     function addMarkersToMap() {
         var i;
-        for(i = 0; i < additionalData.length; i++) {
+        for (i = 0; i < additionalData.length; i++) {
             map.addStadiumToMap(additionalData[i]);
         }
     }

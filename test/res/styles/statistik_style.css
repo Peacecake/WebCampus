@@ -1,41 +1,38 @@
-.Chartrow{
-  padding: 0;
-  margin: 0;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  justify-content: center;
-
-  -webkit-flex-flow: row wrap;
-
+.Chartrow {
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
 }
-.StatsContent{
-  background-color: #ecf0f1;
-  border: 2px solid black;
-  border-radius: 10px;
-  max-width:1800px;
-  width: 95vW;
-  margin-left: auto;
-  margin-right: auto;
-  position: abolute;
-  z-index: -10;
+
+.StatsContent {
+    background-color: #ecf0f1;
+    border: 2px solid black;
+    border-radius: 10px;
+    max-width: 1800px;
+    width: 95vW;
+    margin-left: auto;
+    margin-right: auto;
+    position: abolute;
+    z-index: -10;
 }
-.Saisonverlauf{
-  color:#c0392b;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center;
-  font-family: 'Bungee Shade', cursive;
+
+.Saisonverlauf {
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Bungee Shade', cursive;
 }
 
 #LineChart {
-  height: 80% !important;
-  width: 80% !important;
-  background-color: white;
-  margin-top: 20px;
-
+    height: 80% !important;
+    width: 80% !important;
+    background-color: white;
+    margin-top: 20px;
 }
