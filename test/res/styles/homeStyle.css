@@ -94,7 +94,8 @@ p::first-line {
     /*line-height: 1.5em;*/
 }
 
-@media all and (max-width: 800px) {
+
+/*@media all and (max-width: 800px) {
     .textContainer {
         width: 100%;
     }
@@ -110,7 +111,9 @@ p::first-line {
     }
     .content {
         /* On small screens, we are no longer using row direction but column */
-        -webkit-box-orient: vertical;
+
+
+/*    -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
@@ -119,11 +122,12 @@ p::first-line {
         top: 0;
         padding-top: 20%;
     }
-}
+}*/
 
-@media all and (max-width: 580px) {
+@media all and (max-width: 800px) {
     .textContainer {
         width: 100%;
+        margin-bottom: 20px;
     }
     .textContent,
     .twitterContent {
@@ -141,7 +145,12 @@ p::first-line {
         flex-direction: column;
     }
     content {
-        top: 10vH;
-        padding-top: 50%;
+        padding-top: 30% !important;
+    }
+}
+
+@media all and (max-width: 760px) {
+    content {
+        padding-top: 40% !important;
     }
 }
