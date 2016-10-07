@@ -1,15 +1,8 @@
-html {
-  background-image: url("../img/stuehle.jpg");
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .Kaderwrapper{
   background-color: #ecf0f1;
   border: 2px solid black;
   border-radius: 10px;
-  max-width:700p\x;
+  max-width:700px;
   width: 60vW;
   margin-left: auto;
   margin-right: auto;
@@ -31,12 +24,14 @@ html {
   margin: 0;
 
   display: -webkit-box;
-  display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
 
-  justify-content: center;
+  -webkit-box-pack: center;
+
+      -ms-flex-pack: center;
+
+          justify-content: center;
 
   -webkit-flex-flow: row wrap;
 
@@ -85,6 +80,9 @@ img{
   opacity: 0;
 
 
+  -webkit-transition: opacity 0.4s ease-in-out;
+
+
   transition: opacity 0.4s ease-in-out;
 
 }
@@ -102,8 +100,14 @@ img{
   }
   .Spielerrow{
     /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center;
   }
 
 }

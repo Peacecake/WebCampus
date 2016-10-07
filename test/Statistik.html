@@ -10,6 +10,8 @@
     </head>
     <body>
         <header>
+            <div class="sideMenuButton" onClick="toggleNavVisibility()"></div>
+
             <div class="teamLogo"></div>
             <h1>Jahntistik</h1>
 
@@ -77,7 +79,13 @@
               </div>
         </div>
 
-
+        <div id="sideNav" class="sideNav hidden">
+            <a href="index.html">Home</a>
+            <a href="overview.html">Überblick</a>
+            <a href="Statistik.html">Statistik</a>
+            <a href="kader.html">Kader</a>
+            <a href="stadion.html">Stadion</a>
+        </div>
 
         <script type="text/template" id="data">
           [
@@ -94,6 +102,14 @@
           ]
 
         </script>
+
+        <script>
+            function toggleNavVisibility() {
+                var sideNav = document.getElementById("sideNav");
+                sideNav.classList.toggle("hidden");
+            }
+        </script>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js">
         </script>

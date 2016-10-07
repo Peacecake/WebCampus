@@ -11,6 +11,9 @@
     </head>
     <body>
         <header>
+
+            <div class="sideMenuButton" onClick="toggleNavVisibility()"></div>
+
             <div class="teamLogo"></div>
             <h1>Jahntistik</h1>
 
@@ -166,6 +169,21 @@
               </div>
             </div>
         </div>
+
+        <div id="sideNav" class="sideNav hidden">
+            <a href="index.html">Home</a>
+            <a href="overview.html">Überblick</a>
+            <a href="Statistik.html">Statistik</a>
+            <a href="kader.html">Kader</a>
+            <a href="stadion.html">Stadion</a>
+        </div>
+
+        <script>
+            function toggleNavVisibility() {
+                var sideNav = document.getElementById("sideNav");
+                sideNav.classList.toggle("hidden");
+            }
+        </script>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>

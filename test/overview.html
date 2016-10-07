@@ -11,6 +11,9 @@
     <body>
         <header>
 
+            <div class="sideMenuButton" onClick="toggleNavVisibility()"></div>
+
+
             <div class="teamLogo"></div>
             <h1>Jahntistik</h1>
 
@@ -37,6 +40,13 @@
             <a href="#">Impressum</a>
         </footer>-->
 
+        <div id="sideNav" class="sideNav hidden">
+            <a href="index.html">Home</a>
+            <a href="overview.html">Überblick</a>
+            <a href="Statistik.html">Statistik</a>
+            <a href="kader.html">Kader</a>
+            <a href="stadion.html">Stadion</a>
+        </div>
 
         <script type="text/template" id="listEntry">
             <li class="teamInfo" lat="<%= lat %>" long="<%= long %>" teamID="<%= teamID %>">
@@ -332,6 +342,12 @@
         <script type="text/javascript" src="js/JahntistikApp.js"></script>
         <script type="text/javascript" src="js/OpponentsListView.js"></script>
         <script type="text/javascript" src="js/MapController.js"></script>
+        <script>
+            function toggleNavVisibility() {
+                var sideNav = document.getElementById("sideNav");
+                sideNav.classList.toggle("hidden");
+            }
+        </script>
         <script>
             App.JahntistikApp.init();
         </script>

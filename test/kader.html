@@ -11,8 +11,10 @@
   </head>
 <body>
 	<header>
+            <div class="sideMenuButton" onClick="toggleNavVisibility()"></div>
+
             <div class="teamLogo"></div>
-            <h1>Jahntistik</h1 class="Kaderh1">
+            <h1 class="Kaderh1">Jahntistik</h1>
 
             <nav>
                 <a href="index.html">Home</a>
@@ -26,7 +28,7 @@
 <div class= "Kaderwrapper">
 
 <div class="Tor">
-	<h1 class="Kaderh1">Tor</h1 class="Kaderh1">
+	<h1 class="Kaderh1">Tor</h1>
 	<div class="Spielerrow">
  	 	<div class="Spieler"><img src="res/img/Spielerbilder/Phillip_Pentke_1.jpeg"><div class="imgDescription"><p class="Kaderp">Phillip Pentke<br>NR: 1</p></div></div>
   		<div class="Spieler"><img src="res/img/Spielerbilder/Bastian_Lerch_26.jpeg"><div class="imgDescription"><p class="Kaderp">Bastian Lerch<br>NR: 26</p></div></div>
@@ -34,7 +36,7 @@
 </div>
 
 <div class ="Abwehr">
-	<h1 class="Kaderh1">Abwehr</h1 class="Kaderh1">
+	<h1 class="Kaderh1">Abwehr</h1>
 	<div class="Spielerrow">
 		<div class="Spieler"><img src="res/img/Spielerbilder/Alexander_Nandzik_3.jpeg"><div class="imgDescription"><p class="Kaderp">Alexander Nandzik<br>NR: 3</p></div></div>
 		<div class="Spieler"><img src="res/img/Spielerbilder/Thomas_Paulus_4.jpeg"><div class="imgDescription"><p class="Kaderp">Thomas Paulus<br>NR: 4</p></div></div>
@@ -53,7 +55,7 @@
 </div>
 
 <div class ="Mittelfeld">
-	<h1 class="Kaderh1">Mittelfeld</h1 class="Kaderh1">
+	<h1 class="Kaderh1">Mittelfeld</h1>
 	<div class="Spielerrow">
 		<div class="Spieler"><img src="res/img/Spielerbilder/Benedikt_Saller_6.jpeg"><div class="imgDescription"><p class="Kaderp">Benedikt Saller<br>NR: 6</p></div></div>
 		<div class="Spieler"><img src="res/img/Spielerbilder/Andreas_Geipl_8.jpeg"><div class="imgDescription"><p class="Kaderp">Andreas Geipl<br>NR: 8</p></div></div>
@@ -76,7 +78,7 @@
 </div>
 
 <div class ="Sturm">
-	<h1 class="Kaderh1">Sturm</h1 class="Kaderh1">
+	<h1 class="Kaderh1">Sturm</h1>
 	<div class="Spielerrow">
 		<div class="Spieler"><img src="res/img/Spielerbilder/Jann_George_9.jpeg"><div class="imgDescription"><p class="Kaderp">Jann George<br>NR: 9</p></div></div>
 		<div class="Spieler"><img src="res/img/Spielerbilder/Markus_Ziereis_11.jpeg"><div class="imgDescription"><p class="Kaderp">Markus Ziereis<br>NR: 11</p></div></div>
@@ -89,7 +91,7 @@
 </div>
 
 <div class ="Trainer">
-	<h1 class="Kaderh1">Trainer-Team</h1 class="Kaderh1">
+	<h1 class="Kaderh1">Trainer-Team</h1>
 	<div class="Spielerrow">
 		<div class="Spieler"><img src="res/img/Spielerbilder/Heiko_Herrlich_TR.jpeg"><div class="imgDescription"><p class="Kaderp">Heiko Herrlich<br>TR</p></div></div>
 		<div class="Spieler"><img src="res/img/Spielerbilder/Harry_Gfreiter_HG.jpeg"><div class="imgDescription"><p class="Kaderp">Harry Gfreiter<br>HG</p></div></div>
@@ -106,7 +108,20 @@
 </div>
 
 
+    <div id="sideNav" class="sideNav hidden">
+        <a href="index.html">Home</a>
+        <a href="overview.html">Überblick</a>
+        <a href="Statistik.html">Statistik</a>
+        <a href="kader.html">Kader</a>
+        <a href="stadion.html">Stadion</a>
+    </div>
 
+    <script>
+        function toggleNavVisibility() {
+            var sideNav = document.getElementById("sideNav");
+            sideNav.classList.toggle("hidden");
+        }
+    </script>
 
   </body>
 </head>

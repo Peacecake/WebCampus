@@ -7,16 +7,28 @@ content a {
 }
 
 .homeContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 80vH;
 }
 
 .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     /*align-items: center;*/
     width: 80%;
     max-width: 1024px;
@@ -82,48 +94,54 @@ p::first-line {
 }
 
 @media all and (max-width: 800px) {
-  .textContainer{
-    width: 100%;
-  }
-  .textContent{
-    padding: 7px;
-    margin: 0;
-  }
-  .twitterContent{
-    margin: 0;
-  }
-
-  .twitterContainer{
-    width:100%;
-  }
-  .content{
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
-  }
-  content{
-    top: 0;
-    padding-top: 20%;
-  }
-}
-  @media all and (max-width: 580px) {
     .textContainer{
-      width: 100%;
+        width: 100%;
     }
-    .textContent, .twitterContent{
-      padding: 7px;
-      margin: 0;
+    .textContent{
+        padding: 7px;
+        margin: 0;
+    }
+    .twitterContent{
+        margin: 0;
     }
 
     .twitterContainer{
-      width:100%;
+        width:100%;
     }
     .content{
-      /* On small screens, we are no longer using row direction but column */
-      flex-direction: column;
+        /* On small screens, we are no longer using row direction but column */
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
     content{
-      top: 12%;
-      padding-top: 20%;
+        top: 0;
+        padding-top: 20%;
+    }
+}
+
+@media all and (max-width: 580px) {
+    .textContainer{
+        width: 100%;
+    }
+    .textContent, .twitterContent{
+        padding: 7px;
+        margin: 0;
     }
 
+    .twitterContainer{
+        width:100%;
+    }
+    .content{
+        /* On small screens, we are no longer using row direction but column */
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    content{
+        top: 10vH;
+        padding-top: 50%;
+    }
 }
