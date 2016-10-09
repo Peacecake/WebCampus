@@ -9,20 +9,27 @@ $(document).ready(function(){
     }
 
     function onButtonClick(e) {
-        var modal = document.querySelector("." + e.target.getAttribute("modal")),
-            closeButton = modal.querySelector(".closeModal");
+        var target = e.target,
+            modal = null;
+
+        while (modal === null) {
+            modal = document.querySelector("." + target.getAttribute("modal"));
+            target = target.parentNode;
+        }
+
+        var closeButton = modal.querySelector(".closeModal");
 
         modal.style.display = "block";
 
-        $(closeButton).click(function(){
+        $(closeButton).click(function () {
             modal.style.display = "none";
         });
-        $(window).click(function(e){
-            if(e.target === modal) {
+        $(window).click(function (e) {
+            if (e.target === modal) {
                 modal.style.display = "none";
             }
         });
-        $(document).keyup(function(e) {
+        $(document).keyup(function (e) {
             if (e.keyCode == ESC_KEY) {
                 modal.style.display = "none";
             }
