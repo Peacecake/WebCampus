@@ -96,7 +96,7 @@ content {
     padding-top: 60px;
     width: 250px;
     -webkit-animation: sideNavSlide 300ms ease-in-out forwards;
-            animation: sideNavSlide 300ms ease-in-out forwards;
+    animation: sideNavSlide 300ms ease-in-out forwards;
 }
 
 @-webkit-keyframes sideNavSlide {
@@ -138,7 +138,6 @@ content {
     display: none;
 }
 
-
 @media screen and (max-width: 800px) {
     nav {
         display: none;
@@ -148,8 +147,10 @@ content {
     }
 }
 
-@media all and (max-width: 580px) {
+/*@media all and (max-width: 580px) {
     header {
         position: initial;
     }
-}
+}*/
+
+
