@@ -41,7 +41,6 @@ header nav a {
 }
 
 header nav a:hover {
-    /*color: red;*/
     border-bottom: 5px solid #ecf0f1;
 }
 
@@ -146,11 +145,3 @@ content {
         display: inline;
     }
 }
-
-/*@media all and (max-width: 580px) {
-    header {
-        position: initial;
-    }
-}*/
-
-

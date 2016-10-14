@@ -3,13 +3,12 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     max-width: 2000px;
 }
 
 content .mapContainer {
     width: 48%;
-    /*height: 700px;*/
     height: 87vH;
     border: 2px solid black;
     border-radius: 5px;
@@ -36,11 +35,11 @@ content .teamInfoContainer {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     padding: 0;
 }
 
@@ -50,18 +49,18 @@ content .teamInfoContainer {
 
 .teamInfo.isVisible {
     -webkit-animation: entryFade 400ms ease-in forwards;
-            animation: entryFade 400ms ease-in forwards;
+    animation: entryFade 400ms ease-in forwards;
 }
 
 @-webkit-keyframes entryFade {
     0% {
         -webkit-transform: scale(0);
-                transform: scale(0);
+        transform: scale(0);
         opacity: 0;
     }
     90% {
         -webkit-transform: scale(1.1);
-                transform: scale(1.1);
+        transform: scale(1.1);
     }
     100% {
         opacity: 1;
@@ -87,11 +86,11 @@ content .teamInfoContainer {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .teamsList li a {
@@ -121,8 +120,7 @@ content .teamInfoContainer {
 
 .clickedExpandButton {
     -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-    /*background-image: url("../img/expand-arrow.svg");*/
+    transform: rotate(180deg);
 }
 
 .teamStats {
@@ -170,14 +168,14 @@ content .teamInfoContainer {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .teamsList li .teamLogoContainer .teamLogo {
@@ -197,12 +195,11 @@ content .teamInfoContainer {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    /*align-items: cente;*/
+    -ms-flex-pack: start;
+    justify-content: flex-start;
 }
 
 .teamList li .scoreContainer {
@@ -212,14 +209,14 @@ content .teamInfoContainer {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 div .scoreBox p {
@@ -249,21 +246,21 @@ footer a {
     .overviewContent {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         width: 100%;
     }
     .mapContainer {
         -webkit-box-ordinal-group: 3;
-            -ms-flex-order: 2;
-                order: 2;
+        -ms-flex-order: 2;
+        order: 2;
         margin-top: 20px;
         width: 100% !important;
     }
     .teamInfoContainer {
         -webkit-box-ordinal-group: 2;
-            -ms-flex-order: 1;
-                order: 1;
+        -ms-flex-order: 1;
+        order: 1;
         width: 100% !important;
     }
 }

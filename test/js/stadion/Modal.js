@@ -1,9 +1,9 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var ESC_KEY = 27,
         modalButtons = [document.querySelector("#priceButton"),
                         document.querySelector("#planButton")];
 
-    for(var i = 0; i < modalButtons.length; i++) {
+    for (var i = 0; i < modalButtons.length; i++) {
         var button = modalButtons[i];
         button.addEventListener("click", onButtonClick);
     }

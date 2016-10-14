@@ -3,12 +3,11 @@ var originalOnClick = Chart.defaults.global.legend.onClick;
 
 function onLineChartClick(event, legendItem) {
     var buttonContainer = document.querySelector(".chartCake");
-    if(legendItem.datasetIndex === 1 || legendItem.datasetIndex === 2 || legendItem.datasetIndex === 4) {
-        if(legendItem.hidden === true) {
+    if (legendItem.datasetIndex === 1 || legendItem.datasetIndex === 2 || legendItem.datasetIndex === 4) {
+        if (legendItem.hidden === true) {
             data.labels = spielTageLang;
-        }
-        else {
-            data.labels = spielTageKurz;    
+        } else {
+            data.labels = spielTageKurz;
         }
     }
     buttonContainer.children[legendItem.datasetIndex].classList.toggle("hide");

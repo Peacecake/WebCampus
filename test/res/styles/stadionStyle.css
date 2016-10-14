@@ -9,7 +9,6 @@ content {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    /*align-items: center;*/
     margin-bottom: 20px;
     height: 80vH;
     font-size: 15pt;
@@ -150,7 +149,6 @@ h2 {
 
 @media all and (max-width: 1150px) {
     .historyContainer {
-        /* On small screens, we are no longer using row direction but column */
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;

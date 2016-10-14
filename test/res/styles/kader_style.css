@@ -1,112 +1,97 @@
     .kaderContent {
-    margin-top: 20px;
-    /*width: 100vW;*/
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.Kaderwrapper {
-    background-color: #ecf0f1;
-    border: 2px solid black;
-    border-radius: 10px;
-    max-width: 700px;
-    width: 100vW;
-    /*width: 60vW;
-    /*margin-left: auto;
-    margin-right: auto;*/
-    z-index: -10;
-}
-
-.Tor,
-.Abwehr,
-.Mittelfeld,
-.Sturm,
-.Trainer {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
-.Spielerrow {
-    padding: 0;
-    margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-flex-flow: row wrap;
-}
-
-.Spieler,
-.imgDescription {
-    background: tomato;
-    width: 149px;
-    height: 210px;
-    margin: 20px;
-}
-
-.Kaderp {
-    color: #ecf0f1;
-    font-weight: bold;
-    font-size: 1em;
-    text-align: center;
-    vertical-align: middle;
-    padding-top: 10px;
-}
-
-.Kaderh1 {
-    color: #c0392b;
-    font-weight: bold;
-    font-size: 2em;
-}
-
-img {
-    position: absolute;
-    display: block;
-}
-
-.imgDescription {
-    position: relative;
-    margin: 0;
-    margin-top: 95%;
-    height: 33%;
-    bottom: 0;
-    background: #c0392b;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: opacity 0.4s ease-in-out;
-    transition: opacity 0.4s ease-in-out;
-}
-
-.Spieler:hover .imgDescription {
-    visibility: visible;
-    opacity: 1;
-}
-
-@media all and (max-width: 880px) {
-    .Kaderwrapper {
-        width: 80%;
-    }
-    /*    .Spielerrow {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
+        margin-top: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
         -webkit-box-align: center;
         -ms-flex-align: center;
-        -ms-grid-row-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
     }
-}
-*/
+    
+    .Kaderwrapper {
+        background-color: #ecf0f1;
+        border: 2px solid black;
+        border-radius: 10px;
+        max-width: 700px;
+        width: 100vW;
+        z-index: -10;
+    }
+    
+    .Tor,
+    .Abwehr,
+    .Mittelfeld,
+    .Sturm,
+    .Trainer {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .Spielerrow {
+        padding: 0;
+        margin: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-flex-flow: row wrap;
+    }
+    
+    .Spieler,
+    .imgDescription {
+        background: tomato;
+        width: 149px;
+        height: 210px;
+        margin: 20px;
+    }
+    
+    .Kaderp {
+        color: #ecf0f1;
+        font-weight: bold;
+        font-size: 1em;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 10px;
+    }
+    
+    .Kaderh1 {
+        color: #c0392b;
+        font-weight: bold;
+        font-size: 2em;
+    }
+    
+    img {
+        position: absolute;
+        display: block;
+    }
+    
+    .imgDescription {
+        position: relative;
+        margin: 0;
+        margin-top: 95%;
+        height: 33%;
+        bottom: 0;
+        background: #c0392b;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: opacity 0.4s ease-in-out;
+        transition: opacity 0.4s ease-in-out;
+    }
+    
+    .Spieler:hover .imgDescription {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    @media all and (max-width: 880px) {
+        .Kaderwrapper {
+            width: 80%;
+        }
+    }
