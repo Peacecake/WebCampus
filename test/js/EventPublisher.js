@@ -1,3 +1,4 @@
+/*Taken from MME-lecture projects*/
 (function (context) {
     "use strict";
 
