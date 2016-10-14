@@ -3,18 +3,32 @@ var originalOnClick = Chart.defaults.global.legend.onClick;
 
 function onLineChartClick(event, legendItem) {
     var buttonContainer = document.querySelector(".chartCake");
+    if(legendItem.datasetIndex === 1 || legendItem.datasetIndex === 2 || legendItem.datasetIndex === 4) {
+        if(legendItem.hidden === true) {
+            data.labels = spielTageLang;
+        }
+        else {
+            data.labels = spielTageKurz;    
+        }
+    }
     buttonContainer.children[legendItem.datasetIndex].classList.toggle("hide");
     originalOnClick.call(this, event, legendItem);
 }
 
 var totaldata = JSON.parse(document.getElementById("data").innerHTML);
-var spielTage = [];
-for (var i = 0; i < totaldata[0].test1516.length; i++) {
-    spielTage[i] = i + 1;
+var spielTageKurz = [],
+    spielTageLang = [],
+    i;
+
+for (i = 0; i < totaldata[0].test1516.length; i++) {
+    spielTageKurz[i] = i + 1;
+}
+for (i = 0; i < totaldata[2].test1314.length; i++) {
+    spielTageLang[i] = i + 1;
 }
 
 var data = {
-    labels: spielTage,
+    labels: spielTageKurz,
     datasets: [
         {
             label: "Saison 1516",
